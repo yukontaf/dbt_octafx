@@ -35,18 +35,18 @@ sources:
 models:
   - name: user_deals
     meta: 
-      metriql
-    columns:
-      - name: user_id
-        meta:
-          metriql.dimension:
-            type: string
-      - name: symbol_name
-        meta:
-          metriql.dimension:
-            type: string
-      - name: deals_cnt
-        description: total number of deals
-        meta:
-          metriql.measure:
-            aggregation: count
+      metriql:
+        columns:
+          - name: user_id
+            meta:
+              metriql.dimension:
+                type: string
+          - name: symbol_name
+            meta:
+              metriql.dimension:
+                type: string
+          - name: deals_cnt
+            description: total number of deals
+            meta:
+              metriql.measure:
+                aggregation: count
