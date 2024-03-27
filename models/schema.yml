@@ -1,0 +1,23 @@
+sources:
+  - name: wh_raw
+    database: analytics-147612
+    schema: wh_raw
+    tables:
+      - name: trading_real_raw
+      - name: users
+      - name: mobile_appsflyer
+      - name: appsflyer_uninstall_events_report
+      - name: users_cids_all
+  - name: supplement
+    database: analytics-147612
+    schema: dev_gsokolov
+    tables:
+      - name: eth_recom
+      - name: random_users
+      - name: eligible_users
+  - name: bloomreach
+    database: analytics-147612
+    schema: bloomreach_raw
+    tables:
+      - name: campaign
+      - name: banner
