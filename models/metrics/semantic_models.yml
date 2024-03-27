@@ -19,10 +19,19 @@ semantic_models:
       - name: deals_cnt
         expr: operation_id
         agg: count
+      - name: sum_symbol_vol
+        expr: volume
+        agg: sum
+
 
 metrics:
   - name: deals_by_symbol_by_user
     type: simple
-    label: deals by symbol by user
+    label: deals by symbol per user
     type_params:
       measure: deals_cnt
+  - name: sum_symbol_bol_by_user
+    type: simple
+    label: sum volume by symbol per user
+    type_params:
+      measure: sum_symbol_vol

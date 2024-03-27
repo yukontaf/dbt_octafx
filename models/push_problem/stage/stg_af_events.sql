@@ -1,4 +1,5 @@
 SELECT
+    af.id,
     af.appsflyer_id
     -- , af_id.user_id
     , media_source
