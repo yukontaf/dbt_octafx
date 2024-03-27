@@ -1,7 +1,7 @@
 WITH stats AS (
     SELECT 
-        ab.user_id,
-        ab.variant,
+        user_id,
+        variant,
         COUNT(DISTINCT d.operation_id) AS deals_cnt,
         COALESCE(SUM(d.volume), 0) AS symbol_volume,
         COALESCE(SUM(CASE WHEN d.symbol_name = '{{ var('symbol_name') }}' THEN d.volume ELSE 0 END), 0) AS {{ var('symbol_name') }}_vol,
@@ -9,12 +9,9 @@ WITH stats AS (
         COALESCE(SUM(CASE WHEN d.symbol_name = '{{ var('symbol_name') }}' THEN 1 ELSE 0 END), 0) AS {{ var('symbol_name') }}_deals_cnt,
         IF(COALESCE(SUM(CASE WHEN d.symbol_name = '{{ var('symbol_name') }}' THEN 1 ELSE 0 END), 0) > 0, 1, 0) AS {{ var('symbol_name') }}_converted
     FROM 
-        {{ ref('ab_users') }} AS ab
-        LEFT JOIN {{ ref('user_deals') }} AS d ON ab.user_id = d.user_id
-            AND DATE(d.close_time_dt) BETWEEN '{{ var('start') }}' AND '{{ var('end') }}'
-            AND d.variant IS NOT NULL
+        {{ref('user_deals')}}
     GROUP BY 
-        ab.user_id, ab.variant
+        user_id, variant
 )
 SELECT 
     user_id,

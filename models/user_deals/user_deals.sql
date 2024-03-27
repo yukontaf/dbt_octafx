@@ -1,5 +1,5 @@
 SELECT
-    t.user_id,
+    u.user_id,
     u.variant,
     operation_id,
     symbol_name,
@@ -12,9 +12,10 @@ SELECT
     close_time_dt,
     DATE(DATE_TRUNC(open_time_dt, DAY)) AS trade_day
 FROM
-    {{ source("wh_raw", "trading_real_raw") }} AS t
-INNER JOIN {{ ref('ab_users') }} AS u
-    ON t.user_id = CAST(u.user_id AS INT)
+    {{ ref('ab_users') }} u
+LEFT JOIN  {{ source("wh_raw", "trading_real_raw") }} AS t
+    ON u.user_id = t.user_id
 WHERE
-    DATE(close_time_dt) BETWEEN '{{ var('start') }}' AND '{{ var('end') }}'
+    (DATE(open_time_dt) BETWEEN '{{ var('start') }}' AND '{{ var('end') }}')
+    AND (DATE(close_time_dt) BETWEEN '{{ var('start') }}' AND '{{ var('end') }}')
     AND cmd < 2
