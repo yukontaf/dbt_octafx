@@ -11,8 +11,3 @@ WITH
 
 
 SELECT user_id, variant FROM eligible
-UNION ALL
-SELECT
-    'Variant B' AS variant
-    , user_id
-FROM {{ source("supplement", "random_users") }}
