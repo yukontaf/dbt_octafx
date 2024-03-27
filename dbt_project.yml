@@ -40,8 +40,8 @@ vars:
   start: '2024-02-05'
   end: '2024-02-12'
   action_id: 8
-  symbol_name: NAS100
-  random_users: false
+  symbol_name: ETHUSD
+  random_users: true
 
 models:
   dbt_octafx:
