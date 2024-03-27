@@ -17,7 +17,7 @@ semantic_models:
         type: categorical
     measures:
       - name: deals_cnt
-        expr: symbol_name
+        expr: operation_id
         agg: count
 
 metrics:
