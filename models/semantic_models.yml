@@ -1,0 +1,28 @@
+semantic_models:
+  - name: deals
+    defaults:
+      agg_time_dimension: open_time_dt
+    model: ref('user_deals')
+    entities:
+      - name: operation_id
+        type: primary
+      - name: user_id
+        type: foreign
+    dimensions:
+      - name: open_time_dt
+        type: time
+        type_params:
+          time_granularity: day
+      - name: symbol_name
+        type: categorical
+    measures:
+      - name: deals_cnt
+        expr: symbol_name
+        agg: count
+
+metrics:
+  - name: deals_by_symbol_by_user
+    type: simple
+    label: deals by symbol by user
+    type_params:
+      measure: deals_cnt
