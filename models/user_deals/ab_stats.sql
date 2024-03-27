@@ -57,20 +57,21 @@ select
     variant,
     deals_cnt,
     PERCENT_RANK()
-        over (partition by user_id order by deals_cnt)
+        over (partition by variant order by deals_cnt)
         as deals_cnt_percentile,
     symbol_volume,
     PERCENT_RANK()
-        over (partition by user_id order by symbol_volume)
+        over (partition by variant order by symbol_volume)
         as symbol_volume_percentile,
     {{ var('symbol_name') }}_vol,
     PERCENT_RANK()
-        over (partition by user_id order by {{ var('symbol_name') }}_vol)
+        over (partition by variant order by {{ var('symbol_name') }}_vol)
         as {{ var('symbol_name') }}_vol_percentile,
     first_{{ var('symbol_name') }}_deal,
     {{ var('symbol_name') }}_deals_cnt,
     PERCENT_RANK()
-        over (partition by user_id order by {{ var('symbol_name') }}_deals_cnt)
+        over (partition by variant order by {{ var('symbol_name') }}_deals_cnt)
         as {{ var('symbol_name') }}_deals_cnt_percentile,
     {{ var('symbol_name') }}_converted
 from stats
+order by deals_cnt desc
