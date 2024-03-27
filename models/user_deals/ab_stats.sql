@@ -32,4 +32,4 @@ SELECT
 FROM 
     stats
 ORDER BY 
-    deals_cnt DESC;
+    deals_cnt DESC
