@@ -16,6 +16,5 @@ FROM
     INNER JOIN {{ ref('ab_users') }} AS u
         ON t.user_id = CAST(u.user_id AS INT)
 WHERE
-    DATE(close_time_dt) BETWEEN '2024-03-11' AND '2024-03-18'
-    -- AND DATE(open_time_dt) BETWEEN '2024-03-11' AND '2024-03-18'
+    DATE(close_time_dt) BETWEEN '{{ var('start') }}' AND '{{ var('end') }}'
     AND cmd < 2
