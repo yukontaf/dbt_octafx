@@ -18,7 +18,7 @@ FROM eligible
 {% set random_users = [var('symbol_name'), "random"]|join('_') %}
 
 UNION all
-SELECT safe_cast(user_id as int), 'Variant B' as variant
+SELECT safe_cast(user_id as int) as user_id, 'Variant B' as variant
 FROM 
 
 {{ ref(random_users) }}
