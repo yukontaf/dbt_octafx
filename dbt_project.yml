@@ -45,7 +45,7 @@ vars:
 
 models:
   dbt_octafx:
-    user_deals:
+    ab_stats:
       +materialized: view
       ab_stats:
         +materialized: table
