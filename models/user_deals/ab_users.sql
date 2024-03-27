@@ -15,14 +15,8 @@ SELECT
 FROM eligible
 {% if var('random_users') == true %}
 {% set random_users = [var('symbol_name'), "random"]|join('_') %}
-<<<<<<< HEAD
-
-UNION all
-SELECT user_id, 'Variant B' as variant
-=======
 union all
 select safe_cast(user_id as int) as user_id, 'Variant B' as variant
->>>>>>> 56b6d2edd9101f115033569e86bccd96c74048dc
 FROM 
 {{ ref(random_users) }}
 {% endif %}
