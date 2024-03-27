@@ -41,6 +41,7 @@ vars:
   end: '2024-02-12'
   action_id: 8
   symbol_name: NAS100
+  random_users: true
 
 models:
   dbt_octafx:
