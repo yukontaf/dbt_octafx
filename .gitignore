@@ -2,3 +2,4 @@
 # these are the default directory names, adjust/add to fit your needs
 dbt_packages/
 logs/
+target/
