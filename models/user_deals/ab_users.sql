@@ -14,8 +14,13 @@ SELECT
     variant
 FROM eligible
 {% if var('random_users') == true %}
+
+{% set random_users = [var('symbol_name'), "random"]|join('_') %}
+
 union all
 select user_id, 'Variant B' as variant
 from 
-{{ source('supplement', 'random_users') }}
+
+{{ ref(random_users) }}
+
 {% endif %}
