@@ -2,7 +2,7 @@ WITH
 eligible AS (
     SELECT
         properties.variant AS variant,
-        SAFE_CAST(user_id AS INT) AS user_id
+        SAFE_CAST(user_id AS INT64) AS user_id
     FROM {{ source("bloomreach", "campaign") }}
     WHERE
         campaign_id = '{{ var('campaign_id') }}'
@@ -18,7 +18,7 @@ FROM eligible
 {% set random_users = [var('symbol_name'), "random"]|join('_') %}
 
 UNION all
-SELECT safe_cast(user_id as int) as user_id, 'Variant B' as variant
+SELECT user_id, 'Variant B' as variant
 FROM 
 
 {{ ref(random_users) }}
