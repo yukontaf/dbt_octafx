@@ -36,11 +36,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 vars:
-  banner_id: 65ddd78688028afca5ba3675
   campaign_id: 65e6e9189b79ad13bfb63cc1
   start: 2024-01-01
   end: 2024-01-07
   action_id: 28
+  symbol_name: NAS100
 
 models:
   dbt_octafx:
