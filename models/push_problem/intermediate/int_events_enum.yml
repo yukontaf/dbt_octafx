@@ -1,0 +1,78 @@
+version: 2
+
+models:
+  - name: int_events_enum
+    description: ""
+    columns:
+      - name: user_id
+        data_type: numeric
+        description: ""
+
+      - name: country_code
+        data_type: string
+        description: ""
+
+      - name: registered_dt
+        data_type: timestamp
+        description: ""
+
+      - name: status
+        data_type: string
+        description: ""
+
+      - name: campaign_id
+        data_type: string
+        description: ""
+
+      - name: consent_category
+        data_type: string
+        description: ""
+
+      - name: sent_timestamp
+        data_type: numeric
+        description: ""
+
+      - name: action_name
+        data_type: string
+        description: ""
+
+      - name: action_id
+        data_type: numeric
+        description: ""
+
+      - name: campaign_name
+        data_type: string
+        description: ""
+
+      - name: platform
+        data_type: string
+        description: ""
+
+      - name: campaign_trigger
+        data_type: string
+        description: ""
+
+      - name: action_type
+        data_type: string
+        description: ""
+
+      - name: ingest_timestamp
+        data_type: timestamp
+        description: ""
+
+      - name: timestamp
+        data_type: timestamp
+        description: ""
+
+      - name: type
+        data_type: string
+        description: ""
+
+      - name: first_error_timestamp
+        data_type: datetime
+        description: ""
+
+      - name: first_error_event_number
+        data_type: numeric
+        description: ""
+

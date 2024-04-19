@@ -1,0 +1,30 @@
+version: 2
+models:
+  - name: event_stream
+    description: ""
+    columns:
+      - name: event_type
+        data_type: string
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: timestamp
+        data_type: timestamp
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: user_id
+        data_type: number
+        description: ""
+        primary_key: true
+        meta:
+          dimension:
+            type: number
+      - name: event_nature
+        data_type: string
+        description: ""
+        meta:
+          dimension:
+            type: string

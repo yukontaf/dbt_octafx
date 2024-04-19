@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: int_af_id
+    description: ""
+    columns:
+      - name: user_id
+        data_type: numeric
+        description: ""
+
+      - name: appsflyer_id
+        data_type: string
+        description: ""
+
+      - name: install_time_dt
+        data_type: timestamp
+        description: ""
+

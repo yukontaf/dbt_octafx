@@ -1,0 +1,232 @@
+version: 2
+models:
+  - name: int_notreg_pushes
+    columns:
+      - name: type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: ingest_timestamp
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: timestamp
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: action_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: campaign_trigger
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: language
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: platform
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: campaign_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: action_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: campaign_policy
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: action_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: recipient
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: sent_timestamp
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: consent_category
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: campaign_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: status
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: integration_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: message_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: integration_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: utm_campaign
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: utm_medium
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: utm_source
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: code
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: message_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: sender
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: sending_ip
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: country
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: city
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: ip
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: state
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: longitude
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: status_code
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: error
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: event_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: symbol
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: redirect_to_screen
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: template_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: title
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: attempts
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: delta_time
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: os
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: location
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: device
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: action_url
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+          metrics:
+            push_cnt:
+              type: count

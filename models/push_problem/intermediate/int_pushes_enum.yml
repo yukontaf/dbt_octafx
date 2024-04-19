@@ -1,0 +1,24 @@
+version: 2
+models:
+  - name: int_pushes_enum
+    columns:
+      - name: user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: first_error_timestamp
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: next_delivered_timestamp
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: time_difference_in_seconds
+        description: ""
+        meta:
+          dimension:
+            type: number

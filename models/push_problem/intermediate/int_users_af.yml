@@ -1,0 +1,29 @@
+version: 2
+models:
+  - name: int_users_af
+    columns:
+      - name: user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: country_code
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: registered_dt
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: appsflyer_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: install_time_dt
+        description: ""
+        meta:
+          dimension:
+            type: timestamp

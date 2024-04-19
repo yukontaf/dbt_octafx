@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: countries
+    description: ""
+    columns:
+      - name: country
+        data_type: string
+        description: ""
+
+      - name: code
+        data_type: string
+        description: ""
+
+      - name: tier
+        data_type: string
+        description: ""
+
+      - name: tier_name
+        data_type: string
+        description: ""
+

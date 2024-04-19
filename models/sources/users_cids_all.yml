@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: users_cids_all
+    description: ""
+    columns:
+      - name: client_id
+        data_type: string
+        description: ""
+
+      - name: user_id
+        data_type: numeric
+        description: ""
+
+      - name: dt
+        data_type: timestamp
+        description: ""
+
+      - name: src_info
+        data_type: string
+        description: ""
+

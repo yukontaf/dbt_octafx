@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: appsflyer_uninstall_events_report
+    description: ""
+    columns:
+      - name: install_time
+        data_type: timestamp
+        description: ""
+
+      - name: event_time
+        data_type: timestamp
+        description: ""
+
+      - name: event_value
+        data_type: string
+        description: ""
+
+      - name: campaign
+        data_type: string
+        description: ""
+
+      - name: campaign_id
+        data_type: string
+        description: ""
+
+      - name: region
+        data_type: string
+        description: ""
+
+      - name: country_code
+        data_type: string
+        description: ""
+
+      - name: appsflyer_id
+        data_type: string
+        description: ""
+
+      - name: customer_user_id
+        data_type: string
+        description: ""
+
+      - name: platform
+        data_type: string
+        description: ""
+
+      - name: os_version
+        data_type: string
+        description: ""
+
+      - name: app_version
+        data_type: string
+        description: ""
+
+      - name: sdk_version
+        data_type: string
+        description: ""
+
+      - name: app_id
+        data_type: string
+        description: ""
+
+      - name: app_name
+        data_type: string
+        description: ""
+
+      - name: bundle_id
+        data_type: string
+        description: ""
+
+      - name: user_agent
+        data_type: string
+        description: ""
+
+      - name: google_play_referrer
+        data_type: string
+        description: ""
+
+      - name: google_play_click_time
+        data_type: timestamp
+        description: ""
+
+      - name: google_play_install_begin_time
+        data_type: timestamp
+        description: ""
+

@@ -1,0 +1,24 @@
+name: dbt_octafx
+
+dbt-cloud:
+  project-id: 362822
+
+profile: "default"
+
+target-path: "target"
+clean-targets:
+  - "dbt_packages"
+  - "target"
+
+vars:
+  campaign_id: 65733b51df03a1daadeb772d
+  start: 2024-04-02
+  end: 2024-04-09
+  action_id: 437
+  symbol_name: XAUUSD
+  random_users: false
+
+models:
+  dbt_octafx:
+    +materialized: view
+

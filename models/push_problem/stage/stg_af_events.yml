@@ -1,0 +1,124 @@
+version: 2
+models:
+  - name: stg_af_events
+    columns:
+      - name: id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: appsflyer_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: media_source
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: af_channel
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: campaign
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: country_code
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: ip
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: platform
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: device_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: os_version
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: app_version
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: sdk_version
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: app_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: app_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: bundle_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: event_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: event_value
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: device_model
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: device_brand
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: event_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: event_time_dt
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: install_time_dt
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: store_reinstall
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: install_app_store
+        description: ""
+        meta:
+          dimension:
+            type: string

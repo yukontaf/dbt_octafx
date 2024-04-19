@@ -1,0 +1,25 @@
+version: 2
+models:
+  - name: funnel_deals
+    columns:
+      - name: user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+            primary_key: true
+      - name: cmd
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: timestamp
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: symbol_name
+        description: ""
+        meta:
+          dimension:
+            type: string
