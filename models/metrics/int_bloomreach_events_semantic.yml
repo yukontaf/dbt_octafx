@@ -17,9 +17,6 @@ semantic_models:
         type: time
         type_params:
           time_granularity: day
-      - name: google_push_notification_id
-        data_type: string
-        description: ""
       - name: action_type
         type: categorical
       - name: status
