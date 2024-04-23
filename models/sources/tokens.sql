@@ -9,8 +9,8 @@ WITH source AS (
 ),
 renamed AS (
     SELECT
-        properties.user_id,
-        properties.google_push_notification_id
+        raw_properties.user_id,
+        raw_properties.google_push_notification_id
     FROM
         source
 )
