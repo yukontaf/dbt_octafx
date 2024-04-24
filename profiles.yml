@@ -1,0 +1,14 @@
+default:
+  outputs:
+    dev:
+      dataset: dev_gsokolov
+      job_execution_timeout_seconds: 399
+      job_retries: 1
+      location: EU
+      method: service-account
+      keyfile: service_account_key.json
+      priority: interactive
+      project: analytics-147612
+      threads: 4
+      type: bigquery
+  target: dev
