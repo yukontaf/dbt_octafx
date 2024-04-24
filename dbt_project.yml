@@ -1,7 +1,8 @@
 name: dbt_octafx
 
-dbt-cloud:
-  project-id: 362822
+version: '0.1.0'
+
+require-dbt-version: ">=0.17.2"
 
 profile: "default"
 
