@@ -4,16 +4,16 @@ semantic_models:
     model: ref('int_pushes')
     description: "A semantic model representing bloomreach events data"
     defaults:
-      agg_time_dimension: timestamp
+      agg_time_dimension: date(timestamp)
     entities:
       - name: user_id
         type: primary
     measures:
-      - name: events_cnt
+      - name: puch_cnt
         expr: 1
         agg: count
     dimensions:
-      - name: timestamp
+      - name: date(timestamp)
         type: time
         type_params:
           time_granularity: day
