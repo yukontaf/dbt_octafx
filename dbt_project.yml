@@ -1,6 +1,6 @@
 name: dbt_octafx
 
-version: '0.1.0'
+version: "0.1.0"
 
 require-dbt-version: ">=0.17.2"
 
@@ -12,14 +12,13 @@ clean-targets:
   - "target"
 
 vars:
-  campaign_id: 65733b51df03a1daadeb772d
-  start: 2024-04-02
-  end: 2024-04-09
-  action_id: 437
+  campaign_id: 66223aafe3b419a0a4b87ae4
+  start: 2024-04-19
+  end: 2024-04-24
+  action_id: 48
   symbol_name: XAUUSD
   random_users: false
 
 models:
   dbt_octafx:
     +materialized: view
-

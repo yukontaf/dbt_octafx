@@ -9,7 +9,7 @@ semantic_models:
       - name: user_id
         type: primary
     measures:
-      - name: events_cnt
+      - name: pushes_cnt
         expr: 1
         agg: count
     dimensions:
