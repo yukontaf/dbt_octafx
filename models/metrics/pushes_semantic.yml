@@ -1,0 +1,25 @@
+version: 2
+semantic_models:
+  - name: pushes_cnt
+    model: ref('int_pushes')
+    description: "A semantic model representing bloomreach events data"
+    defaults:
+      agg_time_dimension: timestamp
+    entities:
+      - name: user_id
+        type: primary
+    measures:
+      - name: events_cnt
+        expr: 1
+        agg: count
+    dimensions:
+      - name: timestamp
+        type: time
+        type_params:
+          time_granularity: day
+      - name: action_type
+        type: categorical
+      - name: status
+        type: categorical
+      - name: error
+        type: categorical
