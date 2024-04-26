@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: corrupt_user_id
+    description: ""
+    columns:
+      - name: failed_pushes_users__appsflyer_id
+        data_type: string
+        description: ""
+
+      - name: failed_pushes_users__user_id
+        data_type: numeric
+        description: ""
+

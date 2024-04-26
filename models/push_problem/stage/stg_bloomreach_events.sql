@@ -10,6 +10,7 @@
 
 select
     c.type,
+    c.internal_customer_id,
     c.ingest_timestamp,
     c.timestamp,
     properties.action_type,
