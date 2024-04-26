@@ -1,0 +1,156 @@
+{
+    "path_count": 762,
+    "parsed_path_count": 0,
+    "static_analysis_path_count": 0,
+    "static_analysis_parsed_path_count": 0,
+    "is_partial_parse_enabled": true,
+    "is_static_analysis_enabled": true,
+    "read_files_elapsed": 0.19826337500000024,
+    "load_all_elapsed": 0.3131702089999999,
+    "projects": [
+        {
+            "project_name": "dbt_octafx",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_bigquery",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_activity_schema",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "amplitude_source",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_utils",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_ops",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "audit_helper",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "snowplow_normalize",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_profiler",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "spark_utils",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "testgen",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "amplitude",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dq_tools",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_datamocktool",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_segment",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "codegen",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_date",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "snowplow_utils",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "fivetran_utils",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_project_evaluator",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_product_analytics",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_graph_theory",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_expectations",
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
+        }
+    ]
+}

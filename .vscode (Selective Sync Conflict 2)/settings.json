@@ -1,7 +1,0 @@
-{
-    "dbt.deferConfigPerProject": {
-        "": {
-            "deferToProduction": true
-        }
-    }
-}
