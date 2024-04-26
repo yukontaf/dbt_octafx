@@ -1,4 +1,4 @@
-SELECT 
+SELECT
     u.user_id,
     u.variant,
     COALESCE(t.operation_id, 0) AS operation_id,
@@ -10,10 +10,16 @@ SELECT
     COALESCE(t.profit, 0) AS profit,
     COALESCE(t.open_time_dt, CAST('1970-01-01' AS TIMESTAMP)) AS open_time_dt,
     COALESCE(t.close_time_dt, CAST('1970-01-01' AS TIMESTAMP)) AS close_time_dt,
-    COALESCE(DATE(DATE_TRUNC(t.open_time_dt, DAY)), DATE('1970-01-01')) AS trade_day
-FROM 
-    {{ ref('ab_users') }} u
-    LEFT JOIN {{ source("wh_raw", "trading_real_raw") }} AS t ON u.user_id = t.user_id
-        AND (DATE(t.open_time_dt) BETWEEN '{{ var('start') }}' AND '{{ var('end') }}')
-        AND (DATE(t.close_time_dt) BETWEEN '{{ var('start') }}' AND '{{ var('end') }}')
-        AND t.cmd < 2
+    COALESCE(DATE(DATE_TRUNC(t.open_time_dt, DAY)), DATE('1970-01-01'))
+        AS trade_day
+FROM
+    {{ ref('ab_users') }} AS u
+LEFT JOIN {{ source("wh_raw", "trading_real_raw") }}
+    AS t ON u.user_id = t.user_id
+AND (
+    DATE(t.open_time_dt) BETWEEN '{{ var('start') }}' AND '{{ var('end') }}'
+)
+AND (
+    DATE(t.close_time_dt) BETWEEN '{{ var('start') }}' AND '{{ var('end') }}'
+)
+AND t.cmd < 2

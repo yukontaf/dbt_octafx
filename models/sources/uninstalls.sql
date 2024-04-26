@@ -17,10 +17,12 @@ users as (
 ),
 
 joined_data as (
-    select u.*, e.appsflyer_id
-    from users u
-    join uninstall_events e
-    on u.cid = e.appsflyer_id
+    select
+        u.*,
+        e.appsflyer_id
+    from users as u
+    inner join uninstall_events as e
+        on u.cid = e.appsflyer_id
 )
 
 select *

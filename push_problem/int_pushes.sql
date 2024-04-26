@@ -1,4 +1,3 @@
-  sql: `
     SELECT
       *,
       CASE

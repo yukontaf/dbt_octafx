@@ -1,7 +1,7 @@
 WITH
 eligible AS (
     SELECT
-        properties.variant AS variant,
+        properties.variant,
         SAFE_CAST(user_id AS INT64) AS user_id
     FROM {{ source("bloomreach", "campaign") }}
     WHERE

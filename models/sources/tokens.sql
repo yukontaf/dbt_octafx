@@ -1,12 +1,12 @@
 WITH source AS (
-    SELECT
-        *
+    SELECT *
     FROM
         {{ source(
             'bloomreach',
             'customers_properties'
         ) }}
 ),
+
 renamed AS (
     SELECT
         raw_properties.user_id,
@@ -14,7 +14,7 @@ renamed AS (
     FROM
         source
 )
-SELECT
-    *
+
+SELECT *
 FROM
     renamed
