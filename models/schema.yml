@@ -4,12 +4,859 @@ sources:
     schema: wh_raw
     tables:
       - name: trading_real_raw
+        columns:
+          - name: account_created_dt
+            description: ''
+            data_type: TIMESTAMP
+          - name: account_created_ut
+            description: ''
+            data_type: INT64
+          - name: balance
+            description: ''
+            data_type: FLOAT64
+          - name: balance_at_close
+            description: ''
+            data_type: FLOAT64
+          - name: balance_operation_type
+            description: ''
+            data_type: INT64
+          - name: close_price
+            description: ''
+            data_type: FLOAT64
+          - name: close_time
+            description: ''
+            data_type: FLOAT64
+          - name: close_time_dt
+            description: ''
+            data_type: TIMESTAMP
+          - name: close_time_since_acc_open
+            description: ''
+            data_type: INT64
+          - name: close_time_since_reg
+            description: ''
+            data_type: INT64
+          - name: cmd
+            description: ''
+            data_type: INT64
+          - name: comment
+            description: ''
+            data_type: STRING
+          - name: commission
+            description: ''
+            data_type: FLOAT64
+          - name: conv_rate1
+            description: ''
+            data_type: FLOAT64
+          - name: copy_trade_commission
+            description: ''
+            data_type: FLOAT64
+          - name: equity_at_close
+            description: ''
+            data_type: FLOAT64
+          - name: equity_at_open
+            description: ''
+            data_type: FLOAT64
+          - name: expiration
+            description: ''
+            data_type: INT64
+          - name: is_closed_by_hedge
+            description: ''
+            data_type: INT64
+          - name: is_pending
+            description: ''
+            data_type: INT64
+          - name: leverage_at_open
+            description: ''
+            data_type: INT64
+          - name: login
+            description: ''
+            data_type: INT64
+          - name: margin_at_open
+            description: ''
+            data_type: FLOAT64
+          - name: margin_rate
+            description: ''
+            data_type: FLOAT64
+          - name: modify_time
+            description: ''
+            data_type: INT64
+          - name: open_price
+            description: ''
+            data_type: FLOAT64
+          - name: open_time
+            description: ''
+            data_type: FLOAT64
+          - name: open_time_dt
+            description: ''
+            data_type: TIMESTAMP
+          - name: operation_id
+            description: ''
+            data_type: INT64
+          - name: pending_created
+            description: ''
+            data_type: INT64
+          - name: pending_type
+            description: ''
+            data_type: INT64
+          - name: profit
+            description: ''
+            data_type: FLOAT64
+          - name: reason
+            description: ''
+            data_type: STRING
+          - name: registered_dt
+            description: ''
+            data_type: TIMESTAMP
+          - name: registered_ut
+            description: ''
+            data_type: INT64
+          - name: shard
+            description: ''
+            data_type: INT64
+          - name: spread_close
+            description: ''
+            data_type: INT64
+          - name: spread_open
+            description: ''
+            data_type: INT64
+          - name: status
+            description: ''
+            data_type: INT64
+          - name: swap_free_commission
+            description: ''
+            data_type: FLOAT64
+          - name: swaps
+            description: ''
+            data_type: FLOAT64
+          - name: symbol_digits
+            description: ''
+            data_type: INT64
+          - name: symbol_name
+            description: ''
+            data_type: STRING
+          - name: trading_account_currency
+            description: ''
+            data_type: STRING
+          - name: trading_account_id
+            description: ''
+            data_type: INT64
+          - name: trading_account_leverage
+            description: ''
+            data_type: INT64
+          - name: type
+            description: ''
+            data_type: INT64
+          - name: user_id
+            description: ''
+            data_type: INT64
+          - name: volume
+            description: ''
+            data_type: FLOAT64
+          - name: initial_open_operation_id
+            description: ''
+            data_type: INT64
+          - name: initial_open_volume
+            description: ''
+            data_type: FLOAT64
+          - name: open_reason
+            description: ''
+            data_type: STRING
+          - name: position_id
+            description: ''
+            data_type: INT64
+          - name: platform_name
+            description: ''
+            data_type: STRING
+          - name: open_deal_price
+            description: ''
+            data_type: FLOAT64
       - name: users
+        columns:
+          - name: user_id
+            description: ''
+            data_type: INT64
+          - name: registered_ut
+            description: ''
+            data_type: INT64
+          - name: registered_dt
+            description: ''
+            data_type: TIMESTAMP
+          - name: verification_status
+            description: ''
+            data_type: INT64
+          - name: is_email_verified
+            description: ''
+            data_type: INT64
+          - name: is_locked
+            description: ''
+            data_type: INT64
+          - name: lock_comment
+            description: ''
+            data_type: STRING
+          - name: last_login
+            description: ''
+            data_type: INT64
+          - name: birthdate
+            description: ''
+            data_type: DATE
+          - name: country_code
+            description: ''
+            data_type: STRING
+          - name: country
+            description: ''
+            data_type: STRING
+          - name: city
+            description: ''
+            data_type: STRING
+          - name: deposited_total
+            description: ''
+            data_type: FLOAT64
+          - name: withdrawn_total
+            description: ''
+            data_type: FLOAT64
+          - name: reg_info
+            description: ''
+            data_type: STRING
+          - name: referrer_id
+            description: ''
+            data_type: INT64
+          - name: is_unsubscribed
+            description: ''
+            data_type: INT64
+          - name: language
+            description: ''
+            data_type: STRING
+          - name: language_id
+            description: ''
+            data_type: INT64
+          - name: support_language_id
+            description: ''
+            data_type: INT64
+          - name: is_withdraw_disabled
+            description: ''
+            data_type: INT64
+          - name: email_domain
+            description: ''
+            data_type: STRING
+          - name: email_hash
+            description: ''
+            data_type: STRING
+          - name: email_hash_md5
+            description: ''
+            data_type: STRING
+          - name: firstname_hash
+            description: ''
+            data_type: STRING
+          - name: lastname_hash
+            description: ''
+            data_type: STRING
+          - name: phone_hash
+            description: ''
+            data_type: STRING
+          - name: phone_filled
+            description: ''
+            data_type: INT64
       - name: mobile_appsflyer
+        columns:
+          - name: id
+            description: ''
+            data_type: INT64
+          - name: attributed_touch_type
+            description: ''
+            data_type: STRING
+          - name: attributed_touch_time
+            description: ''
+            data_type: STRING
+          - name: media_source
+            description: ''
+            data_type: STRING
+          - name: is_retargeting
+            description: ''
+            data_type: STRING
+          - name: retargeting_conversion_type
+            description: ''
+            data_type: STRING
+          - name: af_channel
+            description: ''
+            data_type: STRING
+          - name: af_keywords
+            description: ''
+            data_type: STRING
+          - name: campaign
+            description: ''
+            data_type: STRING
+          - name: af_c_id
+            description: ''
+            data_type: STRING
+          - name: af_adset
+            description: ''
+            data_type: STRING
+          - name: af_adset_id
+            description: ''
+            data_type: STRING
+          - name: af_ad
+            description: ''
+            data_type: STRING
+          - name: af_ad_id
+            description: ''
+            data_type: STRING
+          - name: af_ad_type
+            description: ''
+            data_type: STRING
+          - name: af_siteid
+            description: ''
+            data_type: STRING
+          - name: af_sub1
+            description: ''
+            data_type: STRING
+          - name: af_sub2
+            description: ''
+            data_type: STRING
+          - name: af_sub3
+            description: ''
+            data_type: STRING
+          - name: af_sub4
+            description: ''
+            data_type: STRING
+          - name: af_sub5
+            description: ''
+            data_type: STRING
+          - name: http_referrer
+            description: ''
+            data_type: STRING
+          - name: original_url
+            description: ''
+            data_type: STRING
+          - name: user_agent
+            description: ''
+            data_type: STRING
+          - name: af_cost_model
+            description: ''
+            data_type: STRING
+          - name: af_cost_value
+            description: ''
+            data_type: STRING
+          - name: af_cost_currency
+            description: ''
+            data_type: STRING
+          - name: contributor1_af_prt
+            description: ''
+            data_type: STRING
+          - name: contributor1_media_source
+            description: ''
+            data_type: STRING
+          - name: contributor1_campaign
+            description: ''
+            data_type: STRING
+          - name: contributor1_touch_type
+            description: ''
+            data_type: STRING
+          - name: contributor1_touch_time
+            description: ''
+            data_type: STRING
+          - name: contributor2_af_prt
+            description: ''
+            data_type: STRING
+          - name: contributor2_media_source
+            description: ''
+            data_type: STRING
+          - name: contributor2_campaign
+            description: ''
+            data_type: STRING
+          - name: contributor2_touch_type
+            description: ''
+            data_type: STRING
+          - name: contributor2_touch_time
+            description: ''
+            data_type: STRING
+          - name: contributor3_af_prt
+            description: ''
+            data_type: STRING
+          - name: contributor3_media_source
+            description: ''
+            data_type: STRING
+          - name: contributor3_campaign
+            description: ''
+            data_type: STRING
+          - name: contributor3_touch_type
+            description: ''
+            data_type: STRING
+          - name: contributor3_touch_time
+            description: ''
+            data_type: STRING
+          - name: country_code
+            description: ''
+            data_type: STRING
+          - name: ip
+            description: ''
+            data_type: STRING
+          - name: region
+            description: ''
+            data_type: STRING
+          - name: state
+            description: ''
+            data_type: STRING
+          - name: city
+            description: ''
+            data_type: STRING
+          - name: wifi
+            description: ''
+            data_type: STRING
+          - name: operator
+            description: ''
+            data_type: STRING
+          - name: carrier
+            description: ''
+            data_type: STRING
+          - name: language
+            description: ''
+            data_type: STRING
+          - name: appsflyer_id
+            description: ''
+            data_type: STRING
+          - name: advertising_id
+            description: ''
+            data_type: STRING
+          - name: idfa
+            description: ''
+            data_type: STRING
+          - name: android_id
+            description: ''
+            data_type: STRING
+          - name: customer_user_id
+            description: ''
+            data_type: STRING
+          - name: imei
+            description: ''
+            data_type: STRING
+          - name: idfv
+            description: ''
+            data_type: STRING
+          - name: platform
+            description: ''
+            data_type: STRING
+          - name: device_type
+            description: ''
+            data_type: STRING
+          - name: os_version
+            description: ''
+            data_type: STRING
+          - name: app_version
+            description: ''
+            data_type: STRING
+          - name: sdk_version
+            description: ''
+            data_type: STRING
+          - name: app_id
+            description: ''
+            data_type: STRING
+          - name: app_name
+            description: ''
+            data_type: STRING
+          - name: bundle_id
+            description: ''
+            data_type: STRING
+          - name: af_attribution_lookback
+            description: ''
+            data_type: STRING
+          - name: event_name
+            description: ''
+            data_type: STRING
+          - name: event_value
+            description: ''
+            data_type: STRING
+          - name: event_revenue
+            description: ''
+            data_type: STRING
+          - name: event_revenue_usd
+            description: ''
+            data_type: STRING
+          - name: event_revenue_currency
+            description: ''
+            data_type: STRING
+          - name: postal_code
+            description: ''
+            data_type: STRING
+          - name: dma
+            description: ''
+            data_type: STRING
+          - name: af_reengagement_window
+            description: ''
+            data_type: STRING
+          - name: event_source
+            description: ''
+            data_type: STRING
+          - name: is_primary_attribution
+            description: ''
+            data_type: STRING
+          - name: af_sub_siteid
+            description: ''
+            data_type: STRING
+          - name: download_time
+            description: ''
+            data_type: STRING
+          - name: device_model
+            description: ''
+            data_type: STRING
+          - name: device_brand
+            description: ''
+            data_type: STRING
+          - name: event_type
+            description: ''
+            data_type: STRING
+          - name: agency
+            description: ''
+            data_type: STRING
+          - name: attribution_type
+            description: ''
+            data_type: STRING
+          - name: event_time_dt
+            description: ''
+            data_type: TIMESTAMP
+          - name: install_time_dt
+            description: ''
+            data_type: TIMESTAMP
+          - name: insert_id
+            description: ''
+            data_type: STRING
+          - name: store_reinstall
+            description: ''
+            data_type: STRING
+          - name: install_app_store
+            description: ''
+            data_type: STRING
+          - name: engagement_type
+            description: ''
+            data_type: STRING
+          - name: af_event_type
+            description: ''
+            data_type: STRING
       - name: appsflyer_uninstall_events_report
+        columns:
+          - name: attributed_touch_type
+            description: ''
+            data_type: STRING
+          - name: attributed_touch_time
+            description: ''
+            data_type: TIMESTAMP
+          - name: install_time
+            description: ''
+            data_type: TIMESTAMP
+          - name: event_time
+            description: ''
+            data_type: TIMESTAMP
+          - name: event_name
+            description: ''
+            data_type: STRING
+          - name: event_value
+            description: ''
+            data_type: STRING
+          - name: event_revenue
+            description: ''
+            data_type: STRING
+          - name: event_revenue_currency
+            description: ''
+            data_type: STRING
+          - name: event_revenue_usd
+            description: ''
+            data_type: STRING
+          - name: event_source
+            description: ''
+            data_type: STRING
+          - name: is_receipt_validated
+            description: ''
+            data_type: STRING
+          - name: partner
+            description: ''
+            data_type: STRING
+          - name: media_source
+            description: ''
+            data_type: STRING
+          - name: channel
+            description: ''
+            data_type: STRING
+          - name: keywords
+            description: ''
+            data_type: STRING
+          - name: campaign
+            description: ''
+            data_type: STRING
+          - name: campaign_id
+            description: ''
+            data_type: STRING
+          - name: adset
+            description: ''
+            data_type: STRING
+          - name: adset_id
+            description: ''
+            data_type: STRING
+          - name: ad
+            description: ''
+            data_type: STRING
+          - name: ad_id
+            description: ''
+            data_type: STRING
+          - name: ad_type
+            description: ''
+            data_type: STRING
+          - name: site_id
+            description: ''
+            data_type: STRING
+          - name: sub_site_id
+            description: ''
+            data_type: STRING
+          - name: sub_param_1
+            description: ''
+            data_type: STRING
+          - name: sub_param_2
+            description: ''
+            data_type: STRING
+          - name: sub_param_3
+            description: ''
+            data_type: STRING
+          - name: sub_param_4
+            description: ''
+            data_type: STRING
+          - name: sub_param_5
+            description: ''
+            data_type: STRING
+          - name: cost_model
+            description: ''
+            data_type: STRING
+          - name: cost_value
+            description: ''
+            data_type: STRING
+          - name: cost_currency
+            description: ''
+            data_type: STRING
+          - name: contributor_1_partner
+            description: ''
+            data_type: STRING
+          - name: contributor_1_media_source
+            description: ''
+            data_type: STRING
+          - name: contributor_1_campaign
+            description: ''
+            data_type: STRING
+          - name: contributor_1_touch_type
+            description: ''
+            data_type: STRING
+          - name: contributor_1_touch_time
+            description: ''
+            data_type: TIMESTAMP
+          - name: contributor_2_partner
+            description: ''
+            data_type: STRING
+          - name: contributor_2_media_source
+            description: ''
+            data_type: STRING
+          - name: contributor_2_campaign
+            description: ''
+            data_type: STRING
+          - name: contributor_2_touch_type
+            description: ''
+            data_type: STRING
+          - name: contributor_2_touch_time
+            description: ''
+            data_type: TIMESTAMP
+          - name: contributor_3_partner
+            description: ''
+            data_type: STRING
+          - name: contributor_3_media_source
+            description: ''
+            data_type: STRING
+          - name: contributor_3_campaign
+            description: ''
+            data_type: STRING
+          - name: contributor_3_touch_type
+            description: ''
+            data_type: STRING
+          - name: contributor_3_touch_time
+            description: ''
+            data_type: TIMESTAMP
+          - name: region
+            description: ''
+            data_type: STRING
+          - name: country_code
+            description: ''
+            data_type: STRING
+          - name: state
+            description: ''
+            data_type: STRING
+          - name: city
+            description: ''
+            data_type: STRING
+          - name: postal_code
+            description: ''
+            data_type: STRING
+          - name: dma
+            description: ''
+            data_type: STRING
+          - name: ip
+            description: ''
+            data_type: STRING
+          - name: wifi
+            description: ''
+            data_type: STRING
+          - name: operator
+            description: ''
+            data_type: STRING
+          - name: carrier
+            description: ''
+            data_type: STRING
+          - name: language
+            description: ''
+            data_type: STRING
+          - name: appsflyer_id
+            description: ''
+            data_type: STRING
+          - name: advertising_id
+            description: ''
+            data_type: STRING
+          - name: idfa
+            description: ''
+            data_type: STRING
+          - name: android_id
+            description: ''
+            data_type: STRING
+          - name: customer_user_id
+            description: ''
+            data_type: STRING
+          - name: imei
+            description: ''
+            data_type: STRING
+          - name: idfv
+            description: ''
+            data_type: STRING
+          - name: platform
+            description: ''
+            data_type: STRING
+          - name: device_type
+            description: ''
+            data_type: STRING
+          - name: os_version
+            description: ''
+            data_type: STRING
+          - name: app_version
+            description: ''
+            data_type: STRING
+          - name: sdk_version
+            description: ''
+            data_type: STRING
+          - name: app_id
+            description: ''
+            data_type: STRING
+          - name: app_name
+            description: ''
+            data_type: STRING
+          - name: bundle_id
+            description: ''
+            data_type: STRING
+          - name: is_retargeting
+            description: ''
+            data_type: STRING
+          - name: retargeting_conversion_type
+            description: ''
+            data_type: STRING
+          - name: attribution_lookback
+            description: ''
+            data_type: STRING
+          - name: reengagement_window
+            description: ''
+            data_type: STRING
+          - name: is_primary_attribution
+            description: ''
+            data_type: STRING
+          - name: user_agent
+            description: ''
+            data_type: STRING
+          - name: http_referrer
+            description: ''
+            data_type: STRING
+          - name: original_url
+            description: ''
+            data_type: STRING
+          - name: google_play_referrer
+            description: ''
+            data_type: STRING
+          - name: google_play_click_time
+            description: ''
+            data_type: TIMESTAMP
+          - name: google_play_install_begin_time
+            description: ''
+            data_type: TIMESTAMP
       - name: users_cids_all
+        columns:
+          - name: client_id
+            description: ''
+            data_type: STRING
+          - name: user_id
+            description: ''
+            data_type: INT64
+          - name: dt
+            description: ''
+            data_type: TIMESTAMP
+          - name: src_info
+            description: ''
+            data_type: STRING
       - name: countries
+        columns:
+          - name: id
+            description: ''
+            data_type: INT64
+          - name: code
+            description: ''
+            data_type: STRING
+          - name: code2
+            description: ''
+            data_type: STRING
+          - name: country
+            description: ''
+            data_type: STRING
+          - name: country_local
+            description: ''
+            data_type: STRING
+          - name: disabled
+            description: ''
+            data_type: INT64
+          - name: in_ecalendar
+            description: ''
+            data_type: INT64
+          - name: in_bms
+            description: ''
+            data_type: INT64
+          - name: phone_country_code
+            description: ''
+            data_type: INT64
+          - name: phone_area_code
+            description: ''
+            data_type: INT64
+          - name: phone_mask
+            description: ''
+            data_type: STRING
+          - name: country_alias
+            description: ''
+            data_type: STRING
       - name: countries_tiers
+        columns:
+          - name: country
+            description: ''
+            data_type: STRING
+          - name: tier
+            description: ''
+            data_type: STRING
+          - name: Tier_id
+            description: ''
+            data_type: INT64
+          - name: has_plan
+            description: ''
+            data_type: INT64
+          - name: country_plan
+            description: ''
+            data_type: STRING
+          - name: extra
+            description: ''
+            data_type: INT64
   - name: supplement
     database: analytics-147612
     schema: dev_gsokolov
@@ -22,5 +869,1307 @@ sources:
     schema: bloomreach_raw
     tables:
       - name: campaign
+        columns:
+          - name: internal_customer_id
+            description: ''
+            data_type: STRING
+          - name: type
+            description: ''
+            data_type: STRING
+          - name: ingest_timestamp
+            description: ''
+            data_type: TIMESTAMP
+          - name: timestamp
+            description: ''
+            data_type: TIMESTAMP
+          - name: properties
+            description: ''
+            data_type: RECORD
+          - name: properties.action_type
+            description: ''
+            data_type: STRING
+          - name: properties.utm_campaign
+            description: ''
+            data_type: STRING
+          - name: properties.subject
+            description: ''
+            data_type: STRING
+          - name: properties.utm_medium
+            description: ''
+            data_type: STRING
+          - name: properties.language
+            description: ''
+            data_type: STRING
+          - name: properties.platform
+            description: ''
+            data_type: STRING
+          - name: properties.campaign_name
+            description: ''
+            data_type: STRING
+          - name: properties.action_id
+            description: ''
+            data_type: NUMERIC
+          - name: properties.campaign_policy
+            description: ''
+            data_type: STRING
+          - name: properties.action_name
+            description: ''
+            data_type: STRING
+          - name: properties.recipient
+            description: ''
+            data_type: STRING
+          - name: properties.sent_timestamp
+            description: ''
+            data_type: NUMERIC
+          - name: properties.campaign_id
+            description: ''
+            data_type: STRING
+          - name: properties.status
+            description: ''
+            data_type: STRING
+          - name: properties.utm_source
+            description: ''
+            data_type: STRING
+          - name: properties.status_code
+            description: ''
+            data_type: NUMERIC
+          - name: properties.c_language_code
+            description: ''
+            data_type: STRING
+          - name: properties.campaign_trigger
+            description: ''
+            data_type: STRING
+          - name: properties.consent_category
+            description: ''
+            data_type: STRING
+          - name: properties.code
+            description: ''
+            data_type: NUMERIC
+          - name: properties.integration_id
+            description: ''
+            data_type: STRING
+          - name: properties.message_type
+            description: ''
+            data_type: STRING
+          - name: properties.integration_name
+            description: ''
+            data_type: STRING
+          - name: properties.sender
+            description: ''
+            data_type: STRING
+          - name: properties.sending_ip
+            description: ''
+            data_type: STRING
+          - name: properties.country
+            description: ''
+            data_type: STRING
+          - name: properties.city
+            description: ''
+            data_type: STRING
+          - name: properties.ip
+            description: ''
+            data_type: STRING
+          - name: properties.latitude
+            description: ''
+            data_type: NUMERIC
+          - name: properties.state
+            description: ''
+            data_type: STRING
+          - name: properties.user_agent__a510e506
+            description: ''
+            data_type: STRING
+          - name: properties.longitude
+            description: ''
+            data_type: NUMERIC
+          - name: properties.message_id
+            description: ''
+            data_type: STRING
+          - name: properties.message
+            description: ''
+            data_type: STRING
+          - name: properties.error
+            description: ''
+            data_type: STRING
+          - name: properties.post_slug
+            description: ''
+            data_type: STRING
+          - name: properties.utm_content
+            description: ''
+            data_type: STRING
+          - name: properties.url
+            description: ''
+            data_type: STRING
+          - name: properties.xpath
+            description: ''
+            data_type: STRING
+          - name: properties.type
+            description: ''
+            data_type: STRING
+          - name: properties.valid_until
+            description: ''
+            data_type: TIMESTAMP
+          - name: properties.variant_id
+            description: ''
+            data_type: NUMERIC
+          - name: properties.new_choice
+            description: ''
+            data_type: BOOLEAN
+          - name: properties.variant
+            description: ''
+            data_type: STRING
+          - name: properties.dealid__5687d774
+            description: ''
+            data_type: STRING
+          - name: properties.accountnumber__0be7be93
+            description: ''
+            data_type: STRING
+          - name: properties.cta
+            description: ''
+            data_type: STRING
+          - name: properties.tradingtype__8a13dd4c
+            description: ''
+            data_type: STRING
+          - name: properties.platformslug__10ba264c
+            description: ''
+            data_type: STRING
+          - name: properties.cumulative
+            description: ''
+            data_type: BOOLEAN
+          - name: properties.c_webinar_event_slug
+            description: ''
+            data_type: STRING
+          - name: properties.event_type
+            description: ''
+            data_type: STRING
+          - name: properties.comment
+            description: ''
+            data_type: STRING
+          - name: properties.template_name
+            description: ''
+            data_type: STRING
+          - name: properties.template_id
+            description: ''
+            data_type: STRING
+          - name: properties.symbol
+            description: ''
+            data_type: STRING
+          - name: properties.positionid__7c012ec8
+            description: ''
+            data_type: STRING
+          - name: properties.redirect_to_screen
+            description: ''
+            data_type: STRING
+          - name: properties.clickaction__ac7a4e64
+            description: ''
+            data_type: STRING
+          - name: properties.c_webinar_tag
+            description: ''
+            data_type: STRING
+          - name: properties.iosversionsode__d77c073d
+            description: ''
+            data_type: STRING
+          - name: properties.app_version
+            description: ''
+            data_type: STRING
+          - name: properties.google_push_notification_id
+            description: ''
+            data_type: STRING
+          - name: properties.attempts
+            description: ''
+            data_type: NUMERIC
+          - name: properties.bot
+            description: ''
+            data_type: BOOLEAN
+          - name: properties.c_subject_rendered
+            description: ''
+            data_type: STRING
+          - name: properties.marketinsighttype__08774bdb
+            description: ''
+            data_type: STRING
+          - name: properties.title
+            description: ''
+            data_type: STRING
+          - name: properties.publicationurl__233f7608
+            description: ''
+            data_type: STRING
+          - name: properties.slug
+            description: ''
+            data_type: STRING
+          - name: properties.channel_id
+            description: ''
+            data_type: NUMERIC
+          - name: properties.id
+            description: ''
+            data_type: STRING
+          - name: properties.deltatime__359510ad
+            description: ''
+            data_type: STRING
+          - name: properties.postid__62fcd071
+            description: ''
+            data_type: STRING
+          - name: properties.delta_time
+            description: ''
+            data_type: STRING
+          - name: properties.event_id
+            description: ''
+            data_type: STRING
+          - name: properties.c_subject
+            description: ''
+            data_type: STRING
+          - name: properties.is_web
+            description: ''
+            data_type: STRING
+          - name: properties._platform
+            description: ''
+            data_type: STRING
+          - name: properties._versioncode__2b8a87a0
+            description: ''
+            data_type: STRING
+          - name: properties.__platform__a8ad3f04
+            description: ''
+            data_type: STRING
+          - name: properties.__versioncode__f4faa1c0
+            description: ''
+            data_type: NUMERIC
+          - name: properties.body2
+            description: ''
+            data_type: STRING
+          - name: properties.body
+            description: ''
+            data_type: STRING
+          - name: properties.storyly_group_id
+            description: ''
+            data_type: STRING
+          - name: properties.os
+            description: ''
+            data_type: STRING
+          - name: properties.browser
+            description: ''
+            data_type: STRING
+          - name: properties.location
+            description: ''
+            data_type: STRING
+          - name: properties.device
+            description: ''
+            data_type: STRING
+          - name: properties.ddd
+            description: ''
+            data_type: STRING
+          - name: properties.thisisadefaultintproperty__1f9e5107
+            description: ''
+            data_type: NUMERIC
+          - name: properties.thisisadefaultstringproperty__c88137ea
+            description: ''
+            data_type: STRING
+          - name: properties.action_url
+            description: ''
+            data_type: STRING
+          - name: raw_properties
+            description: ''
+            data_type: RECORD
+          - name: raw_properties.action_type
+            description: ''
+            data_type: STRING
+          - name: raw_properties.utm_campaign
+            description: ''
+            data_type: STRING
+          - name: raw_properties.subject
+            description: ''
+            data_type: STRING
+          - name: raw_properties.utm_medium
+            description: ''
+            data_type: STRING
+          - name: raw_properties.language
+            description: ''
+            data_type: STRING
+          - name: raw_properties.platform
+            description: ''
+            data_type: STRING
+          - name: raw_properties.campaign_name
+            description: ''
+            data_type: STRING
+          - name: raw_properties.action_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.campaign_policy
+            description: ''
+            data_type: STRING
+          - name: raw_properties.action_name
+            description: ''
+            data_type: STRING
+          - name: raw_properties.recipient
+            description: ''
+            data_type: STRING
+          - name: raw_properties.sent_timestamp
+            description: ''
+            data_type: STRING
+          - name: raw_properties.campaign_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.status
+            description: ''
+            data_type: STRING
+          - name: raw_properties.utm_source
+            description: ''
+            data_type: STRING
+          - name: raw_properties.status_code
+            description: ''
+            data_type: STRING
+          - name: raw_properties.c_language_code
+            description: ''
+            data_type: STRING
+          - name: raw_properties.campaign_trigger
+            description: ''
+            data_type: STRING
+          - name: raw_properties.consent_category
+            description: ''
+            data_type: STRING
+          - name: raw_properties.code
+            description: ''
+            data_type: STRING
+          - name: raw_properties.integration_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.message_type
+            description: ''
+            data_type: STRING
+          - name: raw_properties.integration_name
+            description: ''
+            data_type: STRING
+          - name: raw_properties.sender
+            description: ''
+            data_type: STRING
+          - name: raw_properties.sending_ip
+            description: ''
+            data_type: STRING
+          - name: raw_properties.country
+            description: ''
+            data_type: STRING
+          - name: raw_properties.city
+            description: ''
+            data_type: STRING
+          - name: raw_properties.ip
+            description: ''
+            data_type: STRING
+          - name: raw_properties.latitude
+            description: ''
+            data_type: STRING
+          - name: raw_properties.state
+            description: ''
+            data_type: STRING
+          - name: raw_properties.user_agent__a510e506
+            description: ''
+            data_type: STRING
+          - name: raw_properties.longitude
+            description: ''
+            data_type: STRING
+          - name: raw_properties.message_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.message
+            description: ''
+            data_type: STRING
+          - name: raw_properties.error
+            description: ''
+            data_type: STRING
+          - name: raw_properties.post_slug
+            description: ''
+            data_type: STRING
+          - name: raw_properties.utm_content
+            description: ''
+            data_type: STRING
+          - name: raw_properties.url
+            description: ''
+            data_type: STRING
+          - name: raw_properties.xpath
+            description: ''
+            data_type: STRING
+          - name: raw_properties.type
+            description: ''
+            data_type: STRING
+          - name: raw_properties.valid_until
+            description: ''
+            data_type: STRING
+          - name: raw_properties.variant_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.new_choice
+            description: ''
+            data_type: STRING
+          - name: raw_properties.variant
+            description: ''
+            data_type: STRING
+          - name: raw_properties.dealid__5687d774
+            description: ''
+            data_type: STRING
+          - name: raw_properties.accountnumber__0be7be93
+            description: ''
+            data_type: STRING
+          - name: raw_properties.cta
+            description: ''
+            data_type: STRING
+          - name: raw_properties.tradingtype__8a13dd4c
+            description: ''
+            data_type: STRING
+          - name: raw_properties.platformslug__10ba264c
+            description: ''
+            data_type: STRING
+          - name: raw_properties.cumulative
+            description: ''
+            data_type: STRING
+          - name: raw_properties.c_webinar_event_slug
+            description: ''
+            data_type: STRING
+          - name: raw_properties.event_type
+            description: ''
+            data_type: STRING
+          - name: raw_properties.comment
+            description: ''
+            data_type: STRING
+          - name: raw_properties.template_name
+            description: ''
+            data_type: STRING
+          - name: raw_properties.template_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.symbol
+            description: ''
+            data_type: STRING
+          - name: raw_properties.positionid__7c012ec8
+            description: ''
+            data_type: STRING
+          - name: raw_properties.redirect_to_screen
+            description: ''
+            data_type: STRING
+          - name: raw_properties.clickaction__ac7a4e64
+            description: ''
+            data_type: STRING
+          - name: raw_properties.c_webinar_tag
+            description: ''
+            data_type: STRING
+          - name: raw_properties.iosversionsode__d77c073d
+            description: ''
+            data_type: STRING
+          - name: raw_properties.app_version
+            description: ''
+            data_type: STRING
+          - name: raw_properties.google_push_notification_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.attempts
+            description: ''
+            data_type: STRING
+          - name: raw_properties.bot
+            description: ''
+            data_type: STRING
+          - name: raw_properties.c_subject_rendered
+            description: ''
+            data_type: STRING
+          - name: raw_properties.marketinsighttype__08774bdb
+            description: ''
+            data_type: STRING
+          - name: raw_properties.title
+            description: ''
+            data_type: STRING
+          - name: raw_properties.publicationurl__233f7608
+            description: ''
+            data_type: STRING
+          - name: raw_properties.slug
+            description: ''
+            data_type: STRING
+          - name: raw_properties.channel_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.deltatime__359510ad
+            description: ''
+            data_type: STRING
+          - name: raw_properties.postid__62fcd071
+            description: ''
+            data_type: STRING
+          - name: raw_properties.delta_time
+            description: ''
+            data_type: STRING
+          - name: raw_properties.event_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.c_subject
+            description: ''
+            data_type: STRING
+          - name: raw_properties.is_web
+            description: ''
+            data_type: STRING
+          - name: raw_properties._platform
+            description: ''
+            data_type: STRING
+          - name: raw_properties._versioncode__2b8a87a0
+            description: ''
+            data_type: STRING
+          - name: raw_properties.__platform__a8ad3f04
+            description: ''
+            data_type: STRING
+          - name: raw_properties.__versioncode__f4faa1c0
+            description: ''
+            data_type: STRING
+          - name: raw_properties.body2
+            description: ''
+            data_type: STRING
+          - name: raw_properties.body
+            description: ''
+            data_type: STRING
+          - name: raw_properties.storyly_group_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.os
+            description: ''
+            data_type: STRING
+          - name: raw_properties.browser
+            description: ''
+            data_type: STRING
+          - name: raw_properties.location
+            description: ''
+            data_type: STRING
+          - name: raw_properties.device
+            description: ''
+            data_type: STRING
+          - name: raw_properties.ddd
+            description: ''
+            data_type: STRING
+          - name: raw_properties.thisisadefaultintproperty__1f9e5107
+            description: ''
+            data_type: STRING
+          - name: raw_properties.thisisadefaultstringproperty__c88137ea
+            description: ''
+            data_type: STRING
+          - name: raw_properties.action_url
+            description: ''
+            data_type: STRING
+          - name: user_id
+            description: ''
+            data_type: STRING
+          - name: campaign_id
+            description: ''
+            data_type: STRING
+          - name: action_id
+            description: ''
+            data_type: NUMERIC
       - name: banner
+        columns:
+          - name: internal_customer_id
+            description: ''
+            data_type: STRING
+          - name: type
+            description: ''
+            data_type: STRING
+          - name: ingest_timestamp
+            description: ''
+            data_type: TIMESTAMP
+          - name: timestamp
+            description: ''
+            data_type: TIMESTAMP
+          - name: properties
+            description: ''
+            data_type: RECORD
+          - name: properties.variant_id
+            description: ''
+            data_type: NUMERIC
+          - name: properties.os
+            description: ''
+            data_type: STRING
+          - name: properties.banner_id
+            description: ''
+            data_type: STRING
+          - name: properties.banner_type
+            description: ''
+            data_type: STRING
+          - name: properties.browser
+            description: ''
+            data_type: STRING
+          - name: properties.interaction
+            description: ''
+            data_type: BOOLEAN
+          - name: properties.action
+            description: ''
+            data_type: STRING
+          - name: properties.location
+            description: ''
+            data_type: STRING
+          - name: properties.variant_name
+            description: ''
+            data_type: STRING
+          - name: properties.banner_name
+            description: ''
+            data_type: STRING
+          - name: properties.device
+            description: ''
+            data_type: STRING
+          - name: properties.variant_origin
+            description: ''
+            data_type: STRING
+          - name: properties.path
+            description: ''
+            data_type: STRING
+          - name: properties.link
+            description: ''
+            data_type: STRING
+          - name: properties.app_version
+            description: ''
+            data_type: STRING
+          - name: properties.device_model
+            description: ''
+            data_type: STRING
+          - name: properties.os_version
+            description: ''
+            data_type: STRING
+          - name: properties.device_type
+            description: ''
+            data_type: STRING
+          - name: properties.type
+            description: ''
+            data_type: STRING
+          - name: properties.platform
+            description: ''
+            data_type: STRING
+          - name: properties.sdk_version
+            description: ''
+            data_type: STRING
+          - name: properties.os_name
+            description: ''
+            data_type: STRING
+          - name: properties.placeholder
+            description: ''
+            data_type: STRING
+          - name: properties.sdk
+            description: ''
+            data_type: STRING
+          - name: properties.error
+            description: ''
+            data_type: STRING
+          - name: properties.phone
+            description: ''
+            data_type: STRING
+          - name: properties.email
+            description: ''
+            data_type: STRING
+          - name: properties.text
+            description: ''
+            data_type: STRING
+          - name: properties.__cplocation__a3c91802
+            description: ''
+            data_type: STRING
+          - name: properties.iosversionsode__d77c073d
+            description: ''
+            data_type: STRING
+          - name: raw_properties
+            description: ''
+            data_type: RECORD
+          - name: raw_properties.variant_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.os
+            description: ''
+            data_type: STRING
+          - name: raw_properties.banner_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.banner_type
+            description: ''
+            data_type: STRING
+          - name: raw_properties.browser
+            description: ''
+            data_type: STRING
+          - name: raw_properties.interaction
+            description: ''
+            data_type: STRING
+          - name: raw_properties.action
+            description: ''
+            data_type: STRING
+          - name: raw_properties.location
+            description: ''
+            data_type: STRING
+          - name: raw_properties.variant_name
+            description: ''
+            data_type: STRING
+          - name: raw_properties.banner_name
+            description: ''
+            data_type: STRING
+          - name: raw_properties.device
+            description: ''
+            data_type: STRING
+          - name: raw_properties.variant_origin
+            description: ''
+            data_type: STRING
+          - name: raw_properties.path
+            description: ''
+            data_type: STRING
+          - name: raw_properties.link
+            description: ''
+            data_type: STRING
+          - name: raw_properties.app_version
+            description: ''
+            data_type: STRING
+          - name: raw_properties.device_model
+            description: ''
+            data_type: STRING
+          - name: raw_properties.os_version
+            description: ''
+            data_type: STRING
+          - name: raw_properties.device_type
+            description: ''
+            data_type: STRING
+          - name: raw_properties.type
+            description: ''
+            data_type: STRING
+          - name: raw_properties.platform
+            description: ''
+            data_type: STRING
+          - name: raw_properties.sdk_version
+            description: ''
+            data_type: STRING
+          - name: raw_properties.os_name
+            description: ''
+            data_type: STRING
+          - name: raw_properties.placeholder
+            description: ''
+            data_type: STRING
+          - name: raw_properties.sdk
+            description: ''
+            data_type: STRING
+          - name: raw_properties.error
+            description: ''
+            data_type: STRING
+          - name: raw_properties.phone
+            description: ''
+            data_type: STRING
+          - name: raw_properties.email
+            description: ''
+            data_type: STRING
+          - name: raw_properties.text
+            description: ''
+            data_type: STRING
+          - name: raw_properties.__cplocation__a3c91802
+            description: ''
+            data_type: STRING
+          - name: raw_properties.iosversionsode__d77c073d
+            description: ''
+            data_type: STRING
+          - name: user_id
+            description: ''
+            data_type: STRING
       - name: customers_properties
+        columns:
+          - name: internal_id
+            description: ''
+            data_type: STRING
+          - name: properties
+            description: ''
+            data_type: RECORD
+          - name: properties.lastname__18c9e5d4
+            description: ''
+            data_type: STRING
+          - name: properties.verificationstatus__0cc54804
+            description: ''
+            data_type: STRING
+          - name: properties.city
+            description: ''
+            data_type: STRING
+          - name: properties.isfeedavailable__e7bd43e7
+            description: ''
+            data_type: NUMERIC
+          - name: properties.language
+            description: ''
+            data_type: STRING
+          - name: properties.birthdate__a73f4d13
+            description: ''
+            data_type: STRING
+          - name: properties.email_invalid
+            description: ''
+            data_type: BOOLEAN
+          - name: properties.lockreason__0f7f2fb4
+            description: ''
+            data_type: STRING
+          - name: properties.isemailverified__d9b1b8ed
+            description: ''
+            data_type: BOOLEAN
+          - name: properties.openfeedreason__38e8afee
+            description: ''
+            data_type: STRING
+          - name: properties.firstname__9cf22fd0
+            description: ''
+            data_type: STRING
+          - name: properties.isib__43608114
+            description: ''
+            data_type: BOOLEAN
+          - name: properties.jwtsalt__f132538f
+            description: ''
+            data_type: STRING
+          - name: properties.countrycode__5ece310b
+            description: ''
+            data_type: STRING
+          - name: properties.registrationdate__caa5ec31
+            description: ''
+            data_type: STRING
+          - name: properties.email_domain
+            description: ''
+            data_type: STRING
+          - name: properties.email
+            description: ''
+            data_type: STRING
+          - name: properties.currentrfmscore__5a60dceb
+            description: ''
+            data_type: STRING
+          - name: properties.currentrfmgroup__429de0be
+            description: ''
+            data_type: STRING
+          - name: properties.currentrecencysegment__424b9121
+            description: ''
+            data_type: STRING
+          - name: properties.user_id
+            description: ''
+            data_type: NUMERIC
+          - name: properties.currentfrequencysegment__542939f7
+            description: ''
+            data_type: STRING
+          - name: properties.currentmonetarysegment__b8cf6f23
+            description: ''
+            data_type: STRING
+          - name: properties.istradeandwinavailable__3ecdd7d1
+            description: ''
+            data_type: BOOLEAN
+          - name: properties.androidisloggedin__1a94389f
+            description: ''
+            data_type: BOOLEAN
+          - name: properties.androidversioncode__2248901a
+            description: ''
+            data_type: NUMERIC
+          - name: properties.google_push_notification_id
+            description: ''
+            data_type: STRING
+          - name: properties.tnw_cart_changed_at
+            description: ''
+            data_type: TIMESTAMP
+          - name: properties.feedpreferredsymbols__3c8e743e
+            description: ''
+            data_type: STRING
+          - name: properties.tnw_cart_goods
+            description: ''
+            data_type: STRING
+          - name: properties.previousfrequencysegment__e533b190
+            description: ''
+            data_type: STRING
+          - name: properties.numorders__b53182d2
+            description: ''
+            data_type: NUMERIC
+          - name: properties.previousrfmgroup__0ce2d6f6
+            description: ''
+            data_type: STRING
+          - name: properties.favoritepair__dee606f8
+            description: ''
+            data_type: STRING
+          - name: properties.previousmonetarysegment__f3604101
+            description: ''
+            data_type: STRING
+          - name: properties.previousrfmscore__523dbf49
+            description: ''
+            data_type: STRING
+          - name: properties.previousrecencysegment__0b56b611
+            description: ''
+            data_type: STRING
+          - name: properties.volumecategory__4aa55be7
+            description: ''
+            data_type: STRING
+          - name: properties.last_invite_webinar_slug
+            description: ''
+            data_type: STRING
+          - name: properties.maxprofit__130795da
+            description: ''
+            data_type: NUMERIC
+          - name: properties.totalvol__49c59b3f
+            description: ''
+            data_type: NUMERIC
+          - name: properties.androidcopytradeversioncode__57a2f487
+            description: ''
+            data_type: NUMERIC
+          - name: properties.androidcopytradeisloggedin__ffb65e3e
+            description: ''
+            data_type: BOOLEAN
+          - name: properties.tmp_google_push_notification_id
+            description: ''
+            data_type: STRING
+          - name: properties.copytrade_google_push_notification_id
+            description: ''
+            data_type: STRING
+          - name: properties.phone
+            description: ''
+            data_type: STRING
+          - name: properties.usermail__b966415e
+            description: ''
+            data_type: STRING
+          - name: properties.feedpreferredmarketpatterns__0a5d1c76
+            description: ''
+            data_type: STRING
+          - name: properties.channelsubscriptions__02d91ce3
+            description: ''
+            data_type: STRING
+          - name: properties.browser_push_notification_vapid_key
+            description: ''
+            data_type: STRING
+          - name: properties.browser_push_notification
+            description: ''
+            data_type: STRING
+          - name: properties.iosisloggedin__2f0e503e
+            description: ''
+            data_type: BOOLEAN
+          - name: properties.iosversionsode__d77c073d
+            description: ''
+            data_type: STRING
+          - name: properties.apple_push_notification_id
+            description: ''
+            data_type: STRING
+          - name: properties.apple_push_notification_authorized
+            description: ''
+            data_type: BOOLEAN
+          - name: properties.licencename__8c0c6ed0
+            description: ''
+            data_type: STRING
+          - name: properties.isphonevalid__96f89cd7
+            description: ''
+            data_type: BOOLEAN
+          - name: properties.referrer_id
+            description: ''
+            data_type: NUMERIC
+          - name: properties.commission
+            description: ''
+            data_type: NUMERIC
+          - name: properties.ibrank__1577bc78
+            description: ''
+            data_type: NUMERIC
+          - name: properties.created
+            description: ''
+            data_type: STRING
+          - name: properties.volume
+            description: ''
+            data_type: NUMERIC
+          - name: properties.new_traders
+            description: ''
+            data_type: NUMERIC
+          - name: properties.apple_push_notification_bundle_id
+            description: ''
+            data_type: STRING
+          - name: properties.isfeedabvolumetestsegment__c6e2bcf7
+            description: ''
+            data_type: NUMERIC
+          - name: properties.reactivation_xau_test
+            description: ''
+            data_type: STRING
+          - name: properties.dealing_promo
+            description: ''
+            data_type: STRING
+          - name: properties.leads__2f10a267
+            description: ''
+            data_type: STRING
+          - name: properties.emailforchanging__8535f097
+            description: ''
+            data_type: STRING
+          - name: properties.diwali_no_offer
+            description: ''
+            data_type: STRING
+          - name: properties.inviteruserid__3c4c752c
+            description: ''
+            data_type: STRING
+          - name: properties.masternamepk__83e56bc6
+            description: ''
+            data_type: STRING
+          - name: properties.openaccounttype__4a9f2138
+            description: ''
+            data_type: STRING
+          - name: properties.mobileapp__262fcc73
+            description: ''
+            data_type: STRING
+          - name: properties.test_welcome_storyly
+            description: ''
+            data_type: STRING
+          - name: properties.event
+            description: ''
+            data_type: STRING
+          - name: properties.emailid__19ca4b09
+            description: ''
+            data_type: STRING
+          - name: properties.quizyten__2cb498bb
+            description: ''
+            data_type: STRING
+          - name: properties.phwebinarreigstered__b102c194
+            description: ''
+            data_type: STRING
+          - name: properties.quizsmmen__046aec03
+            description: ''
+            data_type: STRING
+          - name: properties.favorite_pair__c3760fe2
+            description: ''
+            data_type: STRING
+          - name: properties.mostactivemonth_day__677df07e
+            description: ''
+            data_type: NUMERIC
+          - name: properties._versioncode__2b8a87a0
+            description: ''
+            data_type: STRING
+          - name: properties._platform
+            description: ''
+            data_type: STRING
+          - name: raw_properties
+            description: ''
+            data_type: RECORD
+          - name: raw_properties.lastname__18c9e5d4
+            description: ''
+            data_type: STRING
+          - name: raw_properties.verificationstatus__0cc54804
+            description: ''
+            data_type: STRING
+          - name: raw_properties.city
+            description: ''
+            data_type: STRING
+          - name: raw_properties.isfeedavailable__e7bd43e7
+            description: ''
+            data_type: STRING
+          - name: raw_properties.language
+            description: ''
+            data_type: STRING
+          - name: raw_properties.birthdate__a73f4d13
+            description: ''
+            data_type: STRING
+          - name: raw_properties.email_invalid
+            description: ''
+            data_type: STRING
+          - name: raw_properties.lockreason__0f7f2fb4
+            description: ''
+            data_type: STRING
+          - name: raw_properties.isemailverified__d9b1b8ed
+            description: ''
+            data_type: STRING
+          - name: raw_properties.openfeedreason__38e8afee
+            description: ''
+            data_type: STRING
+          - name: raw_properties.firstname__9cf22fd0
+            description: ''
+            data_type: STRING
+          - name: raw_properties.isib__43608114
+            description: ''
+            data_type: STRING
+          - name: raw_properties.jwtsalt__f132538f
+            description: ''
+            data_type: STRING
+          - name: raw_properties.countrycode__5ece310b
+            description: ''
+            data_type: STRING
+          - name: raw_properties.registrationdate__caa5ec31
+            description: ''
+            data_type: STRING
+          - name: raw_properties.email_domain
+            description: ''
+            data_type: STRING
+          - name: raw_properties.email
+            description: ''
+            data_type: STRING
+          - name: raw_properties.currentrfmscore__5a60dceb
+            description: ''
+            data_type: STRING
+          - name: raw_properties.currentrfmgroup__429de0be
+            description: ''
+            data_type: STRING
+          - name: raw_properties.currentrecencysegment__424b9121
+            description: ''
+            data_type: STRING
+          - name: raw_properties.user_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.currentfrequencysegment__542939f7
+            description: ''
+            data_type: STRING
+          - name: raw_properties.currentmonetarysegment__b8cf6f23
+            description: ''
+            data_type: STRING
+          - name: raw_properties.istradeandwinavailable__3ecdd7d1
+            description: ''
+            data_type: STRING
+          - name: raw_properties.androidisloggedin__1a94389f
+            description: ''
+            data_type: STRING
+          - name: raw_properties.androidversioncode__2248901a
+            description: ''
+            data_type: STRING
+          - name: raw_properties.google_push_notification_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.tnw_cart_changed_at
+            description: ''
+            data_type: STRING
+          - name: raw_properties.feedpreferredsymbols__3c8e743e
+            description: ''
+            data_type: STRING
+          - name: raw_properties.tnw_cart_goods
+            description: ''
+            data_type: STRING
+          - name: raw_properties.previousfrequencysegment__e533b190
+            description: ''
+            data_type: STRING
+          - name: raw_properties.numorders__b53182d2
+            description: ''
+            data_type: STRING
+          - name: raw_properties.previousrfmgroup__0ce2d6f6
+            description: ''
+            data_type: STRING
+          - name: raw_properties.favoritepair__dee606f8
+            description: ''
+            data_type: STRING
+          - name: raw_properties.previousmonetarysegment__f3604101
+            description: ''
+            data_type: STRING
+          - name: raw_properties.previousrfmscore__523dbf49
+            description: ''
+            data_type: STRING
+          - name: raw_properties.previousrecencysegment__0b56b611
+            description: ''
+            data_type: STRING
+          - name: raw_properties.volumecategory__4aa55be7
+            description: ''
+            data_type: STRING
+          - name: raw_properties.last_invite_webinar_slug
+            description: ''
+            data_type: STRING
+          - name: raw_properties.maxprofit__130795da
+            description: ''
+            data_type: STRING
+          - name: raw_properties.totalvol__49c59b3f
+            description: ''
+            data_type: STRING
+          - name: raw_properties.androidcopytradeversioncode__57a2f487
+            description: ''
+            data_type: STRING
+          - name: raw_properties.androidcopytradeisloggedin__ffb65e3e
+            description: ''
+            data_type: STRING
+          - name: raw_properties.tmp_google_push_notification_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.copytrade_google_push_notification_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.phone
+            description: ''
+            data_type: STRING
+          - name: raw_properties.usermail__b966415e
+            description: ''
+            data_type: STRING
+          - name: raw_properties.feedpreferredmarketpatterns__0a5d1c76
+            description: ''
+            data_type: STRING
+          - name: raw_properties.channelsubscriptions__02d91ce3
+            description: ''
+            data_type: STRING
+          - name: raw_properties.browser_push_notification_vapid_key
+            description: ''
+            data_type: STRING
+          - name: raw_properties.browser_push_notification
+            description: ''
+            data_type: STRING
+          - name: raw_properties.iosisloggedin__2f0e503e
+            description: ''
+            data_type: STRING
+          - name: raw_properties.iosversionsode__d77c073d
+            description: ''
+            data_type: STRING
+          - name: raw_properties.apple_push_notification_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.apple_push_notification_authorized
+            description: ''
+            data_type: STRING
+          - name: raw_properties.licencename__8c0c6ed0
+            description: ''
+            data_type: STRING
+          - name: raw_properties.isphonevalid__96f89cd7
+            description: ''
+            data_type: STRING
+          - name: raw_properties.referrer_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.commission
+            description: ''
+            data_type: STRING
+          - name: raw_properties.ibrank__1577bc78
+            description: ''
+            data_type: STRING
+          - name: raw_properties.created
+            description: ''
+            data_type: STRING
+          - name: raw_properties.volume
+            description: ''
+            data_type: STRING
+          - name: raw_properties.new_traders
+            description: ''
+            data_type: STRING
+          - name: raw_properties.apple_push_notification_bundle_id
+            description: ''
+            data_type: STRING
+          - name: raw_properties.isfeedabvolumetestsegment__c6e2bcf7
+            description: ''
+            data_type: STRING
+          - name: raw_properties.reactivation_xau_test
+            description: ''
+            data_type: STRING
+          - name: raw_properties.dealing_promo
+            description: ''
+            data_type: STRING
+          - name: raw_properties.leads__2f10a267
+            description: ''
+            data_type: STRING
+          - name: raw_properties.emailforchanging__8535f097
+            description: ''
+            data_type: STRING
+          - name: raw_properties.diwali_no_offer
+            description: ''
+            data_type: STRING
+          - name: raw_properties.inviteruserid__3c4c752c
+            description: ''
+            data_type: STRING
+          - name: raw_properties.masternamepk__83e56bc6
+            description: ''
+            data_type: STRING
+          - name: raw_properties.openaccounttype__4a9f2138
+            description: ''
+            data_type: STRING
+          - name: raw_properties.mobileapp__262fcc73
+            description: ''
+            data_type: STRING
+          - name: raw_properties.test_welcome_storyly
+            description: ''
+            data_type: STRING
+          - name: raw_properties.event
+            description: ''
+            data_type: STRING
+          - name: raw_properties.emailid__19ca4b09
+            description: ''
+            data_type: STRING
+          - name: raw_properties.quizyten__2cb498bb
+            description: ''
+            data_type: STRING
+          - name: raw_properties.phwebinarreigstered__b102c194
+            description: ''
+            data_type: STRING
+          - name: raw_properties.quizsmmen__046aec03
+            description: ''
+            data_type: STRING
+          - name: raw_properties.favorite_pair__c3760fe2
+            description: ''
+            data_type: STRING
+          - name: raw_properties.mostactivemonth_day__677df07e
+            description: ''
+            data_type: STRING
+          - name: raw_properties._versioncode__2b8a87a0
+            description: ''
+            data_type: STRING
+          - name: raw_properties._platform
+            description: ''
+            data_type: STRING

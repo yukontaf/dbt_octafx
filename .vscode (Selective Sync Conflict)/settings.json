@@ -1,0 +1,8 @@
+{
+    "dbt.deferConfigPerProject": {
+        "": {
+            "manifestPathForDeferral": "/Users/gsokolov/Library/CloudStorage/Dropbox/dbt_octafx/target",
+            "manifestPathType": "local"
+        }
+    }
+}

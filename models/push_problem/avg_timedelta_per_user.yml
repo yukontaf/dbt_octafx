@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: avg_timedelta_per_user
+    columns:
+      - name: avg_time_delta_seconds
+        description: ""
+        data_type: FLOAT64
+        meta:
+          dimension:
+            type: number

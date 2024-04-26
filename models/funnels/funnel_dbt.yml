@@ -1,29 +1,28 @@
 version: 2
 models:
-  - name: countries
-    description: ""
+  - name: funnel_dbt
     columns:
-      - name: country
-        data_type: STRING
+      - name: event_type
         description: ""
         meta:
           dimension:
             type: string
-      - name: code
         data_type: STRING
+      - name: unique_users
         description: ""
+        data_type: INT64
         meta:
           dimension:
-            type: string
-      - name: tier
-        data_type: STRING
+            type: number
+      - name: pct_conversion
         description: ""
+        data_type: FLOAT64
         meta:
           dimension:
-            type: string
-      - name: tier_name
-        data_type: STRING
+            type: number
+      - name: pct_of_previous
         description: ""
+        data_type: FLOAT64
         meta:
           dimension:
-            type: string
+            type: number

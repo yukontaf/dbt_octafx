@@ -4,26 +4,27 @@ models:
     description: ""
     columns:
       - name: event_type
-        data_type: string
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
       - name: timestamp
-        data_type: timestamp
+        data_type: TIMESTAMP
         description: ""
         meta:
           dimension:
             type: timestamp
       - name: user_id
-        data_type: number
+        data_type: INT64
         description: ""
         primary_key: true
         meta:
           dimension:
             type: number
+            primary_key: true
       - name: event_nature
-        data_type: string
+        data_type: STRING
         description: ""
         meta:
           dimension:

@@ -1,9 +1,10 @@
 version: 2
 models:
-  - name: metricflow_time_spine
+  - name: dummy_id
     columns:
-      - name: date_day
+      - name: user_id
         description: ""
         meta:
           dimension:
-            type: date
+            type: number
+        data_type: INT64

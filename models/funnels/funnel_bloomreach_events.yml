@@ -4,62 +4,62 @@ models:
     description: ""
     columns:
       - name: action_id
-        data_type: numeric
+        data_type: NUMERIC
         description: ""
         meta:
           dimension:
             type: number
       - name: action_name
-        data_type: string
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
       - name: action_type
-        data_type: string
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
       - name: campaign_id
-        data_type: string
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
       - name: event_number
-        data_type: number
+        data_type: INT64
         description: ""
         meta:
           dimension:
             type: number
       - name: platform
-        data_type: string
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
       - name: status
-        data_type: string
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
       - name: timestamp
-        data_type: timestamp
+        data_type: TIMESTAMP
         description: ""
         meta:
           dimension:
             type: timestamp
       - name: user_id
-        data_type: number
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: number
             primary_key: true
       - name: variant
-        data_type: string
+        data_type: STRING
         description: ""
         meta:
           dimension:

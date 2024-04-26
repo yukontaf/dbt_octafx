@@ -1,0 +1,76 @@
+version: 2
+models:
+  - name: user_deals
+    columns:
+      - name: user_id
+        description: ""
+        data_type: INT64
+        meta:
+          dimension:
+            type: number
+      - name: variant
+        description: ""
+        data_type: STRING
+        meta:
+          dimension:
+            type: string
+      - name: operation_id
+        description: ""
+        data_type: INT64
+        meta:
+          dimension:
+            type: number
+      - name: symbol_name
+        description: ""
+        data_type: STRING
+        meta:
+          dimension:
+            type: string
+      - name: cmd
+        description: ""
+        data_type: INT64
+        meta:
+          dimension:
+            type: number
+      - name: volume
+        description: ""
+        data_type: FLOAT64
+        meta:
+          dimension:
+            type: number
+      - name: open_price
+        description: ""
+        data_type: FLOAT64
+        meta:
+          dimension:
+            type: number
+      - name: close_price
+        description: ""
+        data_type: FLOAT64
+        meta:
+          dimension:
+            type: number
+      - name: profit
+        description: ""
+        data_type: FLOAT64
+        meta:
+          dimension:
+            type: number
+      - name: open_time_dt
+        description: ""
+        data_type: TIMESTAMP
+        meta:
+          dimension:
+            type: timestamp
+      - name: close_time_dt
+        description: ""
+        data_type: TIMESTAMP
+        meta:
+          dimension:
+            type: timestamp
+      - name: trade_day
+        description: ""
+        data_type: DATE
+        meta:
+          dimension:
+            type: date

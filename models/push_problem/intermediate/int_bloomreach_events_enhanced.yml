@@ -1,283 +1,299 @@
 version: 2
 models:
-  - name: int_notreg_pushes
+  - name: int_bloomreach_events_enhanced
+    description: ""
     columns:
       - name: type
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: internal_customer_id
-        description: ""
         data_type: STRING
+        description: ""
         meta:
           dimension:
             type: string
       - name: ingest_timestamp
+        data_type: TIMESTAMP
         description: ""
         meta:
           dimension:
             type: timestamp
-        data_type: TIMESTAMP
       - name: timestamp
+        data_type: TIMESTAMP
         description: ""
         meta:
           dimension:
             type: timestamp
-        data_type: TIMESTAMP
       - name: action_type
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: campaign_trigger
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: language
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: platform
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: campaign_name
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: action_id
+        data_type: NUMERIC
         description: ""
         meta:
           dimension:
             type: number
-        data_type: NUMERIC
       - name: campaign_policy
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: action_name
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: recipient
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: sent_timestamp
+        data_type: NUMERIC
         description: ""
         meta:
           dimension:
             type: number
-        data_type: NUMERIC
       - name: consent_category
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: campaign_id
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: status
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: integration_id
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: message_id
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: integration_name
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: utm_campaign
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: utm_medium
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: utm_source
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: code
+        data_type: NUMERIC
         description: ""
         meta:
           dimension:
             type: number
-        data_type: NUMERIC
       - name: message_type
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: sender
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: sending_ip
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: country
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: city
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: ip
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: state
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: longitude
+        data_type: NUMERIC
         description: ""
         meta:
           dimension:
             type: number
-        data_type: NUMERIC
       - name: status_code
+        data_type: NUMERIC
         description: ""
         meta:
           dimension:
             type: number
-        data_type: NUMERIC
       - name: error
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: event_type
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: symbol
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: redirect_to_screen
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: template_name
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: title
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: attempts
+        data_type: NUMERIC
         description: ""
         meta:
           dimension:
             type: number
-        data_type: NUMERIC
       - name: delta_time
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: os
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: location
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: device
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: action_url
+        data_type: STRING
         description: ""
         meta:
           dimension:
             type: string
-        data_type: STRING
       - name: user_id
+        data_type: NUMERIC
         description: ""
         meta:
           dimension:
             type: number
-          metrics:
-            push_cnt:
-              type: count
-        data_type: NUMERIC
+      - name: google_push_notification_id
+        data_type: STRING
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: country_code
+        data_type: STRING
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: registered_dt
+        data_type: TIMESTAMP
+        description: ""
+        meta:
+          dimension:
+            type: timestamp

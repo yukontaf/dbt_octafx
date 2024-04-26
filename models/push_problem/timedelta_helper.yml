@@ -1,0 +1,46 @@
+version: 2
+models:
+  - name: timedelta_helper
+    columns:
+      - name: appsflyer_id
+        description: ""
+        data_type: STRING
+        meta:
+          dimension:
+            type: string
+      - name: if_failed
+        description: ""
+        data_type: INT64
+        meta:
+          dimension:
+            type: number
+      - name: timestamp
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+        data_type: TIMESTAMP
+      - name: status
+        description: ""
+        meta:
+          dimension:
+            type: string
+        data_type: STRING
+      - name: action_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+        data_type: NUMERIC
+      - name: action_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+        data_type: STRING
+      - name: campaign_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+        data_type: STRING

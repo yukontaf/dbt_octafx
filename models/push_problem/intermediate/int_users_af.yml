@@ -7,23 +7,28 @@ models:
         meta:
           dimension:
             type: number
+        data_type: INT64
       - name: country_code
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: registered_dt
         description: ""
         meta:
           dimension:
             type: timestamp
+        data_type: TIMESTAMP
       - name: appsflyer_id
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: install_time_dt
         description: ""
         meta:
           dimension:
             type: timestamp
+        data_type: TIMESTAMP

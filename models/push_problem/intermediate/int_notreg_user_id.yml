@@ -18,8 +18,13 @@ models:
         meta:
           dimension:
             type: number
+          metrics:
+            push_cnt:
+              type: count
+        data_type: NUMERIC
       - name: first_error_timestamp
         description: ""
         meta:
           dimension:
             type: timestamp
+        data_type: DATETIME

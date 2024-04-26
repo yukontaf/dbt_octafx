@@ -7,118 +7,142 @@ models:
         meta:
           dimension:
             type: number
+        data_type: INT64
       - name: appsflyer_id
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: media_source
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: af_channel
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: campaign
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: country_code
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: ip
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: platform
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: device_type
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: os_version
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: app_version
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: sdk_version
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: app_id
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: app_name
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: bundle_id
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: event_name
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: event_value
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: device_model
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: device_brand
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: event_type
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: event_time_dt
         description: ""
         meta:
           dimension:
             type: timestamp
+        data_type: TIMESTAMP
       - name: install_time_dt
         description: ""
         meta:
           dimension:
             type: timestamp
+        data_type: TIMESTAMP
       - name: store_reinstall
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING
       - name: install_app_store
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING

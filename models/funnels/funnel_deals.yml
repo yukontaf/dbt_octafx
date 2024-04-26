@@ -8,18 +8,22 @@ models:
           dimension:
             type: number
             primary_key: true
+        data_type: INT64
       - name: cmd
         description: ""
         meta:
           dimension:
             type: number
+        data_type: INT64
       - name: timestamp
         description: ""
         meta:
           dimension:
             type: timestamp
+        data_type: TIMESTAMP
       - name: symbol_name
         description: ""
         meta:
           dimension:
             type: string
+        data_type: STRING

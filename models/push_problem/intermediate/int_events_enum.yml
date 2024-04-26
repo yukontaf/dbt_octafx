@@ -1,78 +1,116 @@
 version: 2
-
 models:
   - name: int_events_enum
     description: ""
     columns:
       - name: user_id
-        data_type: numeric
+        data_type: NUMERIC
         description: ""
-
+        meta:
+          dimension:
+            type: number
+          metrics:
+            push_cnt:
+              type: count
       - name: country_code
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: registered_dt
-        data_type: timestamp
+        data_type: TIMESTAMP
         description: ""
-
+        meta:
+          dimension:
+            type: timestamp
       - name: status
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: campaign_id
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: consent_category
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: sent_timestamp
-        data_type: numeric
+        data_type: NUMERIC
         description: ""
-
+        meta:
+          dimension:
+            type: number
       - name: action_name
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: action_id
-        data_type: numeric
+        data_type: NUMERIC
         description: ""
-
+        meta:
+          dimension:
+            type: number
       - name: campaign_name
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: platform
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: campaign_trigger
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: action_type
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: ingest_timestamp
-        data_type: timestamp
+        data_type: TIMESTAMP
         description: ""
-
+        meta:
+          dimension:
+            type: timestamp
       - name: timestamp
-        data_type: timestamp
+        data_type: TIMESTAMP
         description: ""
-
+        meta:
+          dimension:
+            type: timestamp
       - name: type
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: first_error_timestamp
-        data_type: datetime
+        data_type: DATETIME
         description: ""
-
+        meta:
+          dimension:
+            type: timestamp
       - name: first_error_event_number
-        data_type: numeric
+        data_type: NUMERIC
         description: ""
-
+        meta:
+          dimension:
+            type: number

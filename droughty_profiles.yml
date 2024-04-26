@@ -1,0 +1,22 @@
+droughty:
+
+  host:
+
+  key_file: /Users/gsokolov/Library/CloudStorage/Dropbox/service_account_key.json
+
+  password:
+
+  port:
+
+  project_name: analytics-147612
+
+  schema_name: dev_gsokolov
+
+  user:
+
+  warehouse_name: big_query
+
+  openai_secret: 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
+
+  test_schemas:
+    - dev_gsokolov

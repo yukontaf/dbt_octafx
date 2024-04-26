@@ -1,86 +1,125 @@
 version: 2
-
 models:
   - name: appsflyer_uninstall_events_report
     description: ""
     columns:
       - name: install_time
-        data_type: timestamp
+        data_type: TIMESTAMP
         description: ""
-
+        meta:
+          dimension:
+            type: timestamp
       - name: event_time
-        data_type: timestamp
+        data_type: TIMESTAMP
         description: ""
-
+        meta:
+          dimension:
+            type: timestamp
       - name: event_value
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: campaign
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: campaign_id
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: region
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: country_code
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: appsflyer_id
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: customer_user_id
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: platform
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: os_version
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: app_version
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: sdk_version
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: app_id
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: app_name
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: bundle_id
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: user_agent
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: google_play_referrer
-        data_type: string
+        data_type: STRING
         description: ""
-
+        meta:
+          dimension:
+            type: string
       - name: google_play_click_time
-        data_type: timestamp
+        data_type: TIMESTAMP
         description: ""
-
+        meta:
+          dimension:
+            type: timestamp
       - name: google_play_install_begin_time
-        data_type: timestamp
+        data_type: TIMESTAMP
         description: ""
-
+        meta:
+          dimension:
+            type: timestamp
