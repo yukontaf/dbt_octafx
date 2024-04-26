@@ -11,12 +11,12 @@ eligible AS (
 
 SELECT
     user_id,
-    variant
+    varianto
 FROM eligible
 {% if var('random_users') == true %}
 {% set random_users = [var('symbol_name'), "random"]|join('_') %}
 union all
 select safe_cast(user_id as int) as user_id, 'Variant B' as variant
-FROM 
+FROM
 {{ ref(random_users) }}
 {% endif %}
