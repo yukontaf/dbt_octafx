@@ -5,8 +5,7 @@ packages:
     version: 1.1.1
   - package: mjirv/dbt_product_analytics
     version: [">=0.1.0"]
-<<<<<<< HEAD
-=======
+
   - package: calogica/dbt_expectations
     version: 0.10.3
   - package: Fleetio/dbt_segment
@@ -31,4 +30,3 @@ packages:
     version: 0.10.0
   - package: fivetran/amplitude
     version: 0.4.0
->>>>>>> 3aefc99 (changes)
