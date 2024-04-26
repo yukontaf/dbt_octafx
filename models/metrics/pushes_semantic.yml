@@ -1,7 +1,7 @@
 version: 2
 semantic_models:
-  - name: bloomreach_events
-    model: ref('int_bloomreach_events_enhanced')
+  - name: pushes_cnt
+    model: ref('int_pushes')
     description: "A semantic model representing bloomreach events data"
     defaults:
       agg_time_dimension: timestamp
@@ -38,3 +38,17 @@ metrics:
     filter: |
       {{ Dimension('user_id__action_type') }}  = 'mobile notification'
       AND {{ Dimension('user_id__status') }} in ('clicked', 'delivered', 'failed')
+  - name: cumulative_pushes_total_l1m  #For this metric, we use a window of 1 month 
+    label: Cumulative pushes total (L1M)
+    description: Trailing 1-month cumulative order amount
+    type: cumulative
+    type_params:
+      measure: pushes_cnt
+      window: 1 month
+  - name: cumulative_pushes_total_mtd   #For this metric, we use a monthly grain-to-date 
+    label: Cumulative pushes total (MTD)
+    description: The month-to-date value of all orders
+    type: cumulative
+    type_params:
+      measure: pushes_cnt
+      grain_to_date: month
