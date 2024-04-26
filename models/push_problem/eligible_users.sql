@@ -3,7 +3,7 @@
       from wh_raw.users
       where EXTRACT(year from registered_dt) = 2024
   ),
-  
+
   b as (
       select distinct SAFE_CAST(user_id as int64) as user_id
       from bloomreach_raw.campaign where
