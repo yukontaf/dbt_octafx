@@ -1,8 +1,7 @@
 name: dbt_octafx
 
-version: "0.1.0"
-
-require-dbt-version: ">=0.17.2"
+dbt-cloud:
+  project-id: 362822
 
 profile: "default"
 
@@ -17,10 +16,6 @@ vars:
   action_id: 437
   symbol_name: XAUUSD
   random_users: false
-  dbt_dq_tool_schema: AUDIT
-
-on-run-end:
-  - "{{ dq_tools.store_test_results(results) }}"
 
 models:
   dbt_octafx:

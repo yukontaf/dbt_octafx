@@ -1,0 +1,29 @@
+version: 2
+models:
+  - name: uninstalls
+    columns:
+      - name: client_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: dt
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: src_info
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: appsflyer_id
+        description: ""
+        meta:
+          dimension:
+            type: string
