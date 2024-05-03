@@ -8,55 +8,20 @@
         clustering=["user_id"]
     ) }}
 
-select
-    c.type,
-    c.internal_customer_id,
-    c.ingest_timestamp,
-    c.timestamp,
-    properties.action_type,
-    properties.campaign_trigger,
-    properties.language,
-    properties.platform,
-    properties.campaign_name,
-    properties.action_id,
-    properties.campaign_policy,
-    -- properties.subject,
-    properties.action_name,
-    properties.recipient,
-    -- properties.message,
-    properties.sent_timestamp,
-    properties.consent_category,
-    properties.campaign_id,
-    properties.status,
-    properties.integration_id,
-    properties.message_id,
-    properties.integration_name,
-    properties.utm_campaign,
-    properties.utm_medium,
-    properties.utm_source,
-    properties.code,
-    properties.message_type,
-    properties.sender,
-    properties.sending_ip,
-    properties.country,
-    properties.city,
-    properties.ip,
-    properties.state,
-    properties.longitude,
-    properties.status_code,
-    properties.error,
-    properties.event_type,
-    properties.symbol,
-    properties.redirect_to_screen,
-    properties.template_name,
-    properties.title,
-    properties.attempts,
-    properties.delta_time,
-    properties.os,
-    properties.location,
-    properties.device,
-    properties.action_url,
-    safe_cast(c.user_id as numeric) as user_id
-from {{ source("bloomreach", 'campaign') }} as c
-where
-    timestamp_trunc(c.timestamp, day) >= '2024-01-01'
+    SELECT
+        internal_customer_id
+        , SAFE_CAST(user_id AS INT64) as user_id
+        , timestamp
+        , campaign_id
+        , action_id
+        , type
+        , properties.campaign_name
+        , properties.status
+        , properties.error
+        , properties.action_name
+        , properties.action_type
+        , properties.variant
+        , properties.platform
+        , ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY timestamp ASC) AS event_number
+    FROM bloomreach_raw.campaign
+    WHERE timestamp >= '2024-01-01'
