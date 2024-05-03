@@ -21,7 +21,7 @@ WITH
             , "payment_system_select" AS event
             , time AS timestamp
         FROM {{ref('ab_users')}} AS ab
-            INNER JOIN {{source('wh_raw', 'events_octa_raw_deposit_payment_system_select')}} AS ps
+            INNER JOIN {{source('amplitude', 'events_octa_raw_deposit_payment_system_select')}} AS ps
                 ON ab.user_id = ps.user_id
         WHERE time BETWEEN "2024-04-19" AND "2024-04-26"
     )

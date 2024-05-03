@@ -1,7 +1,10 @@
 sources:
-  - name: events_octa_raw_deposit_payment_system_select
+  - name: amplitude
     database: analytics-147612
     schema: amplitude
+    tables:
+      - name: events_octa_raw_deposit_payment_system_select
+
   - name: wh_raw
     database: analytics-147612
     schema: wh_raw

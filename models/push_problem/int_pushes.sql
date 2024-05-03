@@ -1,67 +1,86 @@
-{{
-    config(
-        materialized="view",
-        partition_by={
-            "field": "timestamp",
-            "data_type": "timestamp",
-            "granularity": "day",
-        },
-        clustering=["user_id"],
-    )
-}}
-
-with
-users as (
-
-    select
-        user_id,
-        registered_dt,
-        country
-    from {{ source('wh_raw', 'users') }}
-    where registered_dt >= '2024-01-01'
-
-),
-
-countries as (select * from {{ source('wh_raw', 'countries') }}),
-
-tokens as (
-    select
-        internal_id,
-        raw_properties.google_push_notification_id as token
-    from {{ source('bloomreach', 'customers_properties') }}
-),
-
-users_countries as (
-
-    select
-        user_id,
-        registered_dt,
-        code
-    from users as u
-    left join countries as c on u.country = c.country
-),
-
-filtered_events as (
-    select *
-    from {{ ref('int_bloomreach_events_enhanced') }}
-    where action_type = 'mobile notification' and status = 'delivered'
-),
-
-installed as (
-    select
-        cast(customer_user_id as unt),
-        event_time_dt
-    from
-        {{ source('wh_raw', 'mobile_appsflyer') }} as a
-    inner join
-        users_countries as u
-        on a.customer_user_id = cast(u.user_id as int)
-    where
-        event_time_dt >= '2024-01-01'
-        and event_type = 'install'
-)
-
-select
-    uc.user_id,
-    t.token
-from installed
+SELECT
+  *
+FROM
+  (
+    SELECT
+      *,
+      CASE
+        WHEN event_number = 1 THEN timestamp
+      END AS first_push
+    FROM
+      (
+        SELECT
+          *
+        FROM
+          (
+            SELECT
+              internal_customer_id,
+              SAFE_CAST(user_id AS INT64) as user_id,
+              timestamp,
+              campaign_id,
+              action_id,
+              type,
+              properties.campaign_name,
+              properties.status,
+              properties.error,
+              properties.action_name,
+              properties.action_type,
+              properties.variant,
+              properties.platform,
+              ROW_NUMBER() OVER (
+                PARTITION BY user_id
+                ORDER BY
+                  timestamp ASC
+              ) AS event_number
+            FROM
+              bloomreach_raw.campaign
+            WHERE
+              timestamp >= '2024-01-01'
+          )
+        WHERE
+          SAFE_CAST(user_id AS INT64) IN (
+            SELECT
+              user_id
+            FROM
+              (
+                WITH u AS (
+                  SELECT
+                    DISTINCT user_id
+                  FROM
+                    wh_raw.users
+                  WHERE
+                    EXTRACT(
+                      YEAR
+                      FROM
+                        registered_dt
+                    ) = 2024
+                ),
+                b AS (
+                  SELECT
+                    DISTINCT SAFE_CAST(user_id AS INT64) AS user_id
+                  FROM
+                    bloomreach_raw.campaign
+                  WHERE
+                    DATE(timestamp) BETWEEN '2024-01-01'
+                    AND DATE(CURRENT_TIMESTAMP)
+                    AND SAFE_CAST(user_id AS INT64) IN (
+                      SELECT
+                        user_id
+                      FROM
+                        u
+                    )
+                    AND properties.action_type = 'mobile notification'
+                    AND properties.status = 'delivered'
+                )
+                SELECT
+                  *
+                FROM
+                  b
+              )
+          )
+          AND action_type = 'mobile notification'
+          AND DATE(timestamp) BETWEEN '2024-01-01'
+          AND DATE(CURRENT_TIMESTAMP)
+          AND status IN ('delivered', 'failed')
+      )
+  ) AS `int_pushes`
