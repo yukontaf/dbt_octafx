@@ -1,0 +1,19 @@
+name: 'testgen'
+version: '1.0.1'
+
+require-dbt-version: [">=1.2.0", "<2.0.0"]
+config-version: 2
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+macro-paths: ["macros"]
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+log-path: "logs"
+
+
+models:
+  dbt_utils: # Hide "dbt_utils" package
+    +docs:
+      show: false

@@ -1,0 +1,74 @@
+config:
+    send_anonymous_usage_stats: False
+    use_colors: True
+
+integration_tests:
+  target: duckdb
+  outputs:
+    sqlite:
+        type: sqlite
+        threads: 1
+        database: 'database'
+        schema: 'main'
+        schemas_and_paths:
+            main: 'data/sqlite/integration_test_data.db'
+        schema_directory: 'sqlite/'
+        host: ''
+    duckdb:
+      type: duckdb
+      path: 'data/duckdb/integration_test_data.duckdb'
+    postgres:
+      type: postgres
+      host: postgres
+      user: postgres
+      password: postgres
+      port: 5432
+      dbname: postgres
+      schema: public
+    mysql:
+      type: mysql
+      host: mysql
+      username: mysql
+      password: mysql
+      port: 3306
+      schema: public
+    snowflake:
+      type: snowflake
+      account: ircmtcn-ekb34223
+      # User/password auth
+      user: DBT_TESTGEN
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: DBT_TESTGEN
+      database: DBT_TESTGEN
+      warehouse: DBT_TESTGEN
+      schema: DBT_TESTGEN
+      threads: 4
+      client_session_keep_alive: False
+      query_tag: DBT_TESTGEN
+      outputs:
+    redshift:
+      type: redshift
+      host: dbt-testgen.117819748843.us-east-1.redshift-serverless.amazonaws.com
+      user: dbt_testgen
+      password: "{{ env_var('REDSHIFT_PASSWORD') }}"
+      dbname: dbt_testgen
+      schema: dbt_testgen
+      port: 5439
+    bigquery:
+      type: bigquery
+      method: service-account
+      project: dbt-testgen
+      dataset: dbt_testgen
+      threads: 4
+      keyfile: gcp_keyfile.json
+
+    databricks:
+      type: databricks
+      #catalog: [optional catalog name if you are using Unity Catalog]
+      schema: hive_metastore # Required
+      host: dbc-ce3894e5-7741.cloud.databricks.com # Required
+      http_path: /sql/1.0/warehouses/f16c9d04325bef22 # Required
+      auth_type: oauth
+      client_id: "{{ env_var('DATABRICKS_CLIENT_ID') }}"
+      client_secret: "{{ env_var('DATABRICKS_CLIENT_SECRET') }}"
+      threads: 4

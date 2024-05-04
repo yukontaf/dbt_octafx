@@ -1,0 +1,59 @@
+version: 2
+
+
+
+macros:
+  - name: get_test_suggestions
+    description: Generates YAML schema file that includes tests for your data
+    arguments: 
+      - name: table_relation
+        type: Relation
+        description: |
+            The [dbt Relation](https://docs.getdbt.com/reference/dbt-classes#relation) 
+            you wish to generate tests for.
+            Example: ref("mymodel")
+      - name: sample
+        type: bool
+        description: Take a random sample when using the `limit` argument
+      - name: limit
+        type: integer
+        description: Use only this number of records to generate tests.
+      - name: resource_type
+        type: string
+        description: The type of resource that `table_relation` is - 'models', 'seeds', or 'sources'
+      - name: column_config
+        type: dict
+        description: "Configurations to set on columns. Example - {'quote': true}"
+      - name: exclude_types
+        type: list
+        description: Column types to exclude from tests.
+      - name: exclude_cols
+        type: list
+        description: Columns to exclude from tests.
+      - name: tags
+        type: list
+        description: Tags to put on the tests.
+      - name: tests
+        type: list
+        description: "Types of tests to generate. Example: ['uniqueness', 'accepted_values', 'range', 'string_length', 'recency']"
+      - name: uniqueness_composite_key_length
+        description: Max length of the composite key for uniqueness tests. Default value is 1.
+        type: integer
+      - name: accepted_values_max_cardinality
+        description: Max cardinality of column to include in generated tests. Default value is 5.
+        type: integer
+      - name: range_stddevs
+        description: Number of standard deviations to add to the range in the generated range tests. Default value is 0.
+        type: integer
+      - name: string_length_stddevs
+        description: Number of standard deviations to add to the string length range in the generated string_length tests. Default value is 0.
+        type: integer
+      - name: recency_stddevs
+        description: Number of standard deviations to add to the recency interval in the generated recency tests. Default value is 1.
+        type: integer
+      - name: dbt_config
+        description: Existing dbt_config dict to merge generated tests into.
+        type: dict
+      - name: return_object
+        type: bool
+        description: Return the DBT Schema file as a dict object instead of printing YAML.
