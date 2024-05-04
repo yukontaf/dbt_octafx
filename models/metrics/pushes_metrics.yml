@@ -1,5 +1,5 @@
 metrics:
-  - name: cumulative_pushes_total_l1m #For this metric, we use a window of 1 month
+  - name: cumulative_pushes_total_l1m
     label: Cumulative pushes total (L1M)
     description: Trailing 1-month cumulative order amount
     type: cumulative
