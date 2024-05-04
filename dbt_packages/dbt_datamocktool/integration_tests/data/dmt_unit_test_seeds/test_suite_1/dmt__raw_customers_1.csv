@@ -1,3 +1,0 @@
-id,first_name,last_name,description
-1,Michael,P.,this description will not match the expected description
-2,Shawn,M.,empty description

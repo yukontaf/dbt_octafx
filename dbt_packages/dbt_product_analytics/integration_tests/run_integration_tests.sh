@@ -1,1 +1,0 @@
-dbt clean && dbt deps && dbt seed && dbt run && dbt test --store-failures
