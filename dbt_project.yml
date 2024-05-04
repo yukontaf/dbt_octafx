@@ -10,10 +10,10 @@ clean-targets:
   - "target"
 
 vars:
-  campaign_id: 65733b51df03a1daadeb772d
-  start: 2024-04-02
-  end: 2024-04-09
-  action_id: 437
+  campaign_id: 662cf1c9ebde3979bc61f3a8
+  start: 2024-04-26
+  end: 2024-05-03
+  action_id: 5
   symbol_name: XAUUSD
   random_users: false
 
