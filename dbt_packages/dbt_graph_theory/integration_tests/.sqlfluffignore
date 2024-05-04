@@ -1,4 +1,0 @@
-dbt_modules/
-dbt_packages/
-ci_venv/
-target/
