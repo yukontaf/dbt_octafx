@@ -19,9 +19,6 @@ vars:
   random_users: false
   dbt_dq_tool_schema: AUDIT
 
-on-run-end:
-  - "{{ dq_tools.store_test_results(results) }}"
-
 models:
   dbt_octafx:
     +materialized: view
