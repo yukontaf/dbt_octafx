@@ -1,24 +1,17 @@
-name: dbt_octafx
+name: 'dbt_octafx'
+version: '1.0'
+config-version: 2
 
-version: "0.1.0"
+profile: 'dbt_octafx'
 
-require-dbt-version: ">=0.17.2"
-
-profile: "default"
-
-target-path: "target"
-clean-targets:
-  - "target"
-
-vars:
-  campaign_id: 65733b51df03a1daadeb772d
-  start: 2024-04-02
-  end: 2024-04-09
-  action_id: 437
-  symbol_name: XAUUSD
-  random_users: false
-  dbt_dq_tool_schema: AUDIT
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
 
 models:
+  +materialized: view
   dbt_octafx:
     +materialized: view

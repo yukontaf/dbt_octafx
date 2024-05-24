@@ -1,29 +1,29 @@
-{{ config(
-    materialized='view'
-) }}
+{{ config(materialized="view") }}
 
-WITH user_last_deal AS (
-    SELECT
-        user_id,
-        MAX(close_time_dt) AS last_deal_time
-    FROM `analytics-147612.wh_raw.trading_real_raw`
-    GROUP BY user_id
-)
+with
+    user_last_deal as (
+        select user_id, max(close_time_dt) as last_deal_time
+        from `analytics-147612.wh_raw.trading_real_raw`
+        group by user_id
+    )
 
-SELECT
+select
     c.user_id,
-    MAX(COALESCE(cp.raw_properties.google_push_notification_id IS NOT NULL, FALSE)) AS has_token,
-    MAX(COALESCE(cc.properties.action = 'accept', FALSE)) AS has_consent
-FROM `analytics-147612.bloomreach_raw.campaign` AS c
-LEFT JOIN `analytics-147612.bloomreach_raw.customers_properties` AS cp
-    ON c.internal_customer_id = cp.internal_id
-LEFT JOIN `analytics-147612.bloomreach_raw.consent` AS cc
-    ON c.internal_customer_id = cc.internal_customer_id
-LEFT JOIN user_last_deal AS uld
-    ON cast(c.user_id as int) = uld.user_id
-WHERE
+    max(
+        coalesce(cp.raw_properties.google_push_notification_id is not null, false)
+    ) as has_token,
+    max(coalesce(cc.properties.action = 'accept', false)) as has_consent
+from `analytics-147612.bloomreach_raw.campaign` as c
+left join
+    `analytics-147612.bloomreach_raw.customers_properties` as cp
+    on c.internal_customer_id = cp.internal_id
+left join
+    `analytics-147612.bloomreach_raw.consent` as cc
+    on c.internal_customer_id = cc.internal_customer_id
+left join user_last_deal as uld on cast(c.user_id as int) = uld.user_id
+where
     c.properties.status = 'delivered'
-    AND c.timestamp BETWEEN '2023-09-01' AND '2024-03-31'
-    AND c.user_id IS NOT NULL
-    AND uld.last_deal_time >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 30 DAY)
-GROUP BY c.user_id
+    and c.timestamp between '2023-09-01' and '2024-03-31'
+    and c.user_id is not null
+    and uld.last_deal_time >= timestamp_sub(current_timestamp(), interval 30 day)
+group by c.user_id

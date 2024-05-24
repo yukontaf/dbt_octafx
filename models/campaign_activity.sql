@@ -1,31 +1,30 @@
-{{ config(
-    materialized='view'
-) }}
+{{ config(materialized="view") }}
 
-WITH
-user_activity AS (
-    SELECT
-        b.user_id,
-        COUNT(DISTINCT action_id) AS total_actions,
-        COUNT(DISTINCT action_type) AS action_variety,
-        COUNT(DISTINCT campaign_id) AS campaigns_engaged,
-        MAX(timestamp) AS last_activity_time,
-        MIN(timestamp) AS first_activity_time,
-        DATE_DIFF(MAX(timestamp), MIN(timestamp), DAY) AS activity_span_days,
-        -- AVG(delta_time) AS avg_response_time,
-        MAX(attempts) AS max_attempts,
-        ARRAY_AGG(DISTINCT device) AS devices_used,
-        ARRAY_AGG(DISTINCT os) AS os_used,
-        ARRAY_AGG(DISTINCT browser) AS browsers_used,
-        ARRAY_AGG(DISTINCT platform) AS platforms_used
-    FROM {{ref('bloomreach_campaign')}} b
-    inner join {{ref('users_segment')}} u
-    on cast(b.user_id as int) = cast(u.user_id as int)
-    WHERE extract(year FROM timestamp) = extract(year FROM current_date())
-    GROUP BY user_id
-)
+with
+    user_activity as (
+        select
+            b.user_id,
+            count(distinct action_id) as total_actions,
+            count(distinct action_type) as action_variety,
+            count(distinct campaign_id) as campaigns_engaged,
+            max(timestamp) as last_activity_time,
+            min(timestamp) as first_activity_time,
+            date_diff(max(timestamp), min(timestamp), day) as activity_span_days,
+            -- AVG(delta_time) AS avg_response_time,
+            max(attempts) as max_attempts,
+            array_agg(distinct device) as devices_used,
+            array_agg(distinct os) as os_used,
+            array_agg(distinct browser) as browsers_used,
+            array_agg(distinct platform) as platforms_used
+        from {{ ref("bloomreach_campaign") }} b
+        inner join
+            {{ ref("users_segment") }} u
+            on cast(b.user_id as int) = cast(u.user_id as int)
+        where extract(year from timestamp) = extract(year from current_date())
+        group by user_id
+    )
 
-SELECT
+select
     ua.user_id,
     ua.total_actions,
     ua.action_variety,
@@ -35,9 +34,9 @@ SELECT
     ua.activity_span_days,
     -- ua.avg_response_time,
     ua.max_attempts,
-    ARRAY_TO_STRING(ua.devices_used, ',') AS devices_used,
-    ARRAY_TO_STRING(ua.os_used, ',') AS os_used,
-    ARRAY_TO_STRING(ua.browsers_used, ',') AS browsers_used,
-    ARRAY_TO_STRING(ua.platforms_used, ',') AS platforms_used
-FROM user_activity AS ua
+    array_to_string(ua.devices_used, ',') as devices_used,
+    array_to_string(ua.os_used, ',') as os_used,
+    array_to_string(ua.browsers_used, ',') as browsers_used,
+    array_to_string(ua.platforms_used, ',') as platforms_used
+from user_activity as ua
 limit 100000

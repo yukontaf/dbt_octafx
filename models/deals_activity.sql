@@ -1,32 +1,37 @@
-{{ config(
-    materialized='view'
-) }}
+{{ config(materialized="view") }}
 
-WITH user_trading_activity AS (
-    SELECT
-        user_id,
-        COUNT(operation_id) AS number_of_trades,
-        SUM(volume) AS total_volume,
-        SUM(profit) AS total_profit,
-        AVG(DATE_DIFF(close_time_dt, open_time_dt, DAY)) AS avg_trade_duration_days
-    FROM {{source('wh_raw', 'trading_real_raw')}}
-    GROUP BY user_id
-),
+with
+    user_trading_activity as (
+        select
+            user_id,
+            count(operation_id) as number_of_trades,
+            sum(volume) as total_volume,
+            sum(profit) as total_profit,
+            avg(date_diff(close_time_dt, open_time_dt, day)) as avg_trade_duration_days
+        from {{ source("wh_raw", "trading_real_raw") }}
+        group by user_id
+    ),
 
-user_communication_quality AS (
-    SELECT
-        user_id,
-        COUNT(action_id) AS total_communications,
-        SUM(CASE WHEN action_type = 'open' THEN 1 ELSE 0 END) AS email_opens,
-        SUM(CASE WHEN action_type = 'click' THEN 1 ELSE 0 END) AS link_clicks,
-        -- AVG(delta_time) AS avg_response_time,
-        COUNT(CASE WHEN action_name IN ('webinar_attend', 'link_click') THEN 1 ELSE NULL END) AS engagements
-    FROM {{ref('bloomreach_campaign')}}
-    WHERE extract(year FROM timestamp) = extract(year FROM current_date())
-    GROUP BY user_id
-)
+    user_communication_quality as (
+        select
+            user_id,
+            count(action_id) as total_communications,
+            sum(case when action_type = 'open' then 1 else 0 end) as email_opens,
+            sum(case when action_type = 'click' then 1 else 0 end) as link_clicks,
+            -- AVG(delta_time) AS avg_response_time,
+            count(
+                case
+                    when action_name in ('webinar_attend', 'link_click')
+                    then 1
+                    else null
+                end
+            ) as engagements
+        from {{ ref("bloomreach_campaign") }}
+        where extract(year from timestamp) = extract(year from current_date())
+        group by user_id
+    )
 
-SELECT
+select
     t.user_id,
     t.number_of_trades,
     t.total_volume,
@@ -37,6 +42,5 @@ SELECT
     c.link_clicks,
     -- c.avg_response_time,
     c.engagements
-FROM user_trading_activity AS t
-JOIN user_communication_quality AS c
-ON t.user_id = c.user_id
+from user_trading_activity as t
+join user_communication_quality as c on t.user_id = c.user_id

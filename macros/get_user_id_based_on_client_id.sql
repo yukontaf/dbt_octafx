@@ -8,7 +8,6 @@
 
     {% set results = run_query(query) %}
     {% if execute %}
-        {% set user_id = results.columns[0].values()[0] %}
-        {{ return(user_id) }}
+        {% set user_id = results.columns[0].values()[0] %} {{ return(user_id) }}
     {% endif %}
 {% endmacro %}

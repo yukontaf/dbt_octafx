@@ -1,12 +1,27 @@
-default:
-  target: dev
-
+dbt_octafx:
   outputs:
     dev:
-      type: bigquery
+      dataset: dev_gsokolov
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /Users/gsokolov/service_account_key.json
+      location: EU
       method: service-account
+      priority: interactive
       project: analytics-147612
-      schema: dev_gsokolov
       threads: 4
+      type: bigquery
+  target: dev
+default:
+  outputs:
+    dev:
+      dataset: dev_gsokolov
       keyfile: service_account_key.json
+      location: EU
+      method: service-account
+      priority: interactive
+      project: analytics-147612
+      threads: 4
       timeout_seconds: 300
+      type: bigquery
+  target: dev

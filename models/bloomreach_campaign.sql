@@ -1,6 +1,4 @@
-{{ config(
-    materialized='view'
-) }}
+{{ config(materialized="view") }}
 
 select distinct
     internal_customer_id,
@@ -88,6 +86,7 @@ select distinct
     safe_cast(user_id as int64) as user_id,
     campaign_id,
     action_id
-from {{source("bloomreach", "campaign")}}
-where extract(year from timestamp) = extract(year from current_date())
-and user_id in (select user_id from {{ref('users_segment')}})
+from {{ source("bloomreach", "campaign") }}
+where
+    extract(year from timestamp) = extract(year from current_date())
+    and user_id in (select user_id from {{ ref("users_segment") }})
