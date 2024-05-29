@@ -1,1 +1,1 @@
-{{ codegen.generate_source('amplitude') }}
+{{ codegen.generate_source("amplitude") }}

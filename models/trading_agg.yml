@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: trading_dynamics_model
+    description: "Model for evaluating trading dynamics per user and per segment"
+    columns:
+      - name: user_id
+        description: "Unique identifier for user"
+        tests:
+          - not_null
+          - unique
+      - name: trading_account_id
+        description: "Trading account identifier"
+        tests:
+          - not_null
+      - name: total_operations
+        description: "Total number of trading operations performed by the user"
+        tests:
+          - not_null
+      - name: total_profit
+        description: "Total profit earned by the user"
+        tests:
+          - not_null
+      - name: avg_balance
+        description: "Average balance of the user's trading account"
+        tests:
+          - not_null
+      - name: total_volume
+        description: "Total volume traded by the user"
+        tests:
+          - not_null
+      - name: avg_volume_per_trade
+        description: "Average volume per trade by the user"
+        tests:
+          - not_null
+      - name: distinct_symbols
+        description: "Number of distinct symbols traded by the user"
+        tests:
+          - not_null
+      - name: segment
+        description: "Segment category for user based on trading dynamics"
+        tests:
+          - not_null
+

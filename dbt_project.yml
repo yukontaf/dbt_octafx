@@ -11,6 +11,10 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
+clean-targets:
+  - "dbt_packages"
+  - "target"
+
 models:
   +materialized: view
   dbt_octafx:

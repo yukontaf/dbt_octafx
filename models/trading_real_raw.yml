@@ -1,0 +1,279 @@
+version: 2
+models:
+  - name: trading_real_raw
+    columns:
+      - name: account_created_dt
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: account_created_ut
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: balance
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: balance_at_close
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: balance_operation_type
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: close_price
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: close_time
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: close_time_dt
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: close_time_since_acc_open
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: close_time_since_reg
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: cmd
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: comment
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: commission
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: conv_rate1
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: copy_trade_commission
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: equity_at_close
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: equity_at_open
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: expiration
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: is_closed_by_hedge
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: is_pending
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: leverage_at_open
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: login
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: margin_at_open
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: margin_rate
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: modify_time
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: open_price
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: open_time
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: open_time_dt
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: operation_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: pending_created
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: pending_type
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: profit
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: reason
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: registered_dt
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: registered_ut
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: shard
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: spread_close
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: spread_open
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: status
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: swap_free_commission
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: swaps
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: symbol_digits
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: symbol_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: trading_account_currency
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: trading_account_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: trading_account_leverage
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: type
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: volume
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: initial_open_operation_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: initial_open_volume
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: open_reason
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: position_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: platform_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: open_deal_price
+        description: ""
+        meta:
+          dimension:
+            type: number
