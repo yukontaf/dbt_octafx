@@ -1,5 +1,8 @@
 {
     "window.autoDetectColorScheme": true,
     "dbt.enableNewLineagePanel": true,
-    "dbt.queryLimit": 500
+    "dbt.queryLimit": 500,
+    "workbench.colorCustomizations": {
+    },
+    "python.pythonPath": "/Users/gsokolov/anaconda3/bin/python"
 }

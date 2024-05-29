@@ -22,8 +22,7 @@ with
             and extract(year from timestamp) = extract(year from current_date())
             and user_id
             in (select safe_cast(user_id as int64) from {{ ref("users_segment") }})
-            and campaign_id
-            in ({{ filter_campaign_ids | join("', '") }})
+            and campaign_id in ({{ filter_campaign_ids | join("', '") }})
     ),
 
     -- Step 2: Filter and process relevant deposits_enhanced data

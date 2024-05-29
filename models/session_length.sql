@@ -6,7 +6,11 @@ with
             lag(event_time_dt) over (
                 partition by customer_user_id order by event_time_dt
             ) as prev_event_time
-        from {{ ref("mobile_appsflyer") }}
+        from {{ source("wh_raw", "mobile_appsflyer") }}
+        where
+            extract(year from event_time_dt) = extract(year from current_date())
+            and customer_user_id
+            in (select distinct user_id from {{ ref("users_segment") }})
     ),
     session_flags as (
         select
@@ -34,6 +38,5 @@ with
         from session_data
         group by customer_user_id, session_id
     )
-select customer_user_id, avg(session_length) as avg_session_length
+select *
 from session_lengths
-group by customer_user_id

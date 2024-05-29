@@ -19,12 +19,15 @@ sources:
       tables:
         - name: campaign
         - name: customers_properties
+        - name: consent
     - name: amplitude
       database: analytics-147612
       schema: amplitude
       tables:
         - name: events_octa_raw_app_feed_reading
         - name: events_octa_raw_web_feed_reading
+        - name: events_octa_raw_deposit_payment_system_select
+        - name: events_octa_raw_filled_personal_info
 
 models:
   - name: trading_dynamics_rolling_aggregates
