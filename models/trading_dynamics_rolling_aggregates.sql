@@ -5,8 +5,10 @@
 }}
 
 with
-    source as (select * from {{ ref("trading_real_raw") }}), filter as (
-        select user_id, trading_account_id, symbol_name, open_time_dt, profit, volume
+    source as (select * from {{ ref("trading_real_raw") }}), 
+
+    filter as (
+        select user_id, operation_id, trading_account_id, symbol_name, open_time_dt, profit, volume
         from source
         where open_time_dt >= '2024-05-01' and cmd < 2
     ),
@@ -16,13 +18,13 @@ with
             user_id,
             trading_account_id,
             symbol_name,
-            date_trunc('day', open_time_dt) as period_start,  -- Change this to 'week' or 'month' for different periods
+            date_trunc(open_time_dt, week) as period_start,  -- Change this to 'week' or 'month' for different periods
             sum(profit) as period_profit,
             sum(volume) as period_volume,
             count(operation_id) as period_operations
         from filter
         group by
-            user_id, trading_account_id, symbol_name, date_trunc('day', open_time_dt)
+            user_id, trading_account_id, symbol_name, date_trunc(open_time_dt, week)
     ),
 
     rolling_aggregates as (
@@ -72,12 +74,12 @@ with
 select
     *,
     case
-        when prev_period_profit is null
+        when prev_period_profit is null or prev_period_profit = 0
         then null
         else (period_profit - prev_period_profit) / prev_period_profit
     end as profit_change_pct,
     case
-        when prev_period_volume is null
+        when prev_period_volume is null or prev_period_volume = 0
         then null
         else (period_volume - prev_period_volume) / prev_period_volume
     end as volume_change_pct
