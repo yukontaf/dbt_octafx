@@ -5,10 +5,15 @@
 }}
 
 with
-    source as (select * from {{ ref("trading_real_raw") }}), 
-
-    filter as (
-        select user_id, operation_id, trading_account_id, symbol_name, open_time_dt, profit, volume
+    source as (select * from {{ ref("trading_real_raw") }}), filter as (
+        select
+            user_id,
+            operation_id,
+            trading_account_id,
+            symbol_name,
+            open_time_dt,
+            profit,
+            volume
         from source
         where open_time_dt >= '2024-05-01' and cmd < 2
     ),
@@ -18,7 +23,7 @@ with
             user_id,
             trading_account_id,
             symbol_name,
-            date_trunc(open_time_dt, week) as period_start,  -- Change this to 'week' or 'month' for different periods
+            date_trunc(open_time_dt, week) as period_start,
             sum(profit) as period_profit,
             sum(volume) as period_volume,
             count(operation_id) as period_operations

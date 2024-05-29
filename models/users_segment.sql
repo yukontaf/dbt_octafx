@@ -3,7 +3,7 @@
 with
     user_last_deal as (
         select user_id, max(close_time_dt) as last_deal_time
-        from `analytics-147612.wh_raw.trading_real_raw`
+        from {{ ref('trading_real_raw') }}
         group by user_id
     )
 

@@ -1,0 +1,74 @@
+{
+    "path_count": 245,
+    "parsed_path_count": 245,
+    "static_analysis_path_count": 23,
+    "static_analysis_parsed_path_count": 19,
+    "is_partial_parse_enabled": true,
+    "is_static_analysis_enabled": true,
+    "read_files_elapsed": 0.03761937499999979,
+    "load_macros_elapsed": 0.5592352090000001,
+    "parse_project_elapsed": 0.6737045829999997,
+    "patch_sources_elapsed": 0.0021186250000000406,
+    "process_manifest_elapsed": 0.027490833000000325,
+    "load_all_elapsed": 1.3379484170000002,
+    "projects": [
+        {
+            "project_name": "dbt_octafx",
+            "elapsed": 0.6538452499999998,
+            "parsers": [
+                {
+                    "parser": "model",
+                    "elapsed": 0.24492358299999983,
+                    "parsed_path_count": 23
+                },
+                {
+                    "parser": "seed",
+                    "elapsed": 0.07584149999999967,
+                    "parsed_path_count": 2
+                },
+                {
+                    "parser": "test",
+                    "elapsed": 0.3295290420000003,
+                    "parsed_path_count": 4
+                }
+            ],
+            "parsed_path_count": 29
+        },
+        {
+            "project_name": "dbt_bigquery",
+            "elapsed": 0.004415707999999796,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt",
+            "elapsed": 0.003751707999999798,
+            "parsers": [
+                {
+                    "parser": "doc",
+                    "elapsed": 0.00018783300000002612,
+                    "parsed_path_count": 1
+                }
+            ],
+            "parsed_path_count": 1
+        },
+        {
+            "project_name": "dbt_utils",
+            "elapsed": 0.004208458999999998,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "codegen",
+            "elapsed": 0.0032886659999999956,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_product_analytics",
+            "elapsed": 0.003968625999999809,
+            "parsers": [],
+            "parsed_path_count": 0
+        }
+    ]
+}

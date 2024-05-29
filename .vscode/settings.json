@@ -1,4 +1,5 @@
 {
     "window.autoDetectColorScheme": true,
-    "dbt.enableNewLineagePanel": true
+    "dbt.enableNewLineagePanel": true,
+    "dbt.queryLimit": 500
 }

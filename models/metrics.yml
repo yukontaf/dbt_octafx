@@ -1,0 +1,67 @@
+version: 2
+
+semantic_models:
+  - name: mobile_appsflyer
+    description: "Semantic model for mobile events tracked by AppsFlyer"
+    model: ref('mobile_appsflyer')
+    defaults:
+      agg_time_dimension: event_time_dt
+    entities:
+      - name: user
+        expr: customer_user_id
+        type: primary
+    dimensions:
+      - name: event_time_dt
+        type: time
+        type_params:
+          time_granularity: day
+      - name: media_source
+        type: categorical
+        expr: media_source
+      - name: campaign
+        type: categorical
+        expr: campaign
+      - name: country_code
+        type: categorical
+        expr: country_code
+      - name: platform
+        type: categorical
+        expr: platform
+    measures:
+      - name: event_count
+        description: "Total count of events"
+        agg: count
+        expr: id
+      - name: total_event_revenue
+        description: "Total revenue from events"
+        agg: sum
+        expr: event_revenue
+      - name: total_event_revenue_usd
+        description: "Total revenue from events in USD"
+        agg: sum
+        expr: event_revenue_usd
+      - name: user_count
+        description: "Unique count of users"
+        expr: customer_user_id
+        agg: count_distinct
+
+metrics:
+  - name: daily_event_count
+    label: "Daily Event Count"
+    description: "Total count of events per day"
+    type: simple
+    type_params:
+      measure: event_count
+  - name: total_revenue
+    label: "Total Revenue"
+    description: "Total revenue generated from events"
+    type: simple
+    type_params:
+      measure: total_event_revenue_usd
+  - name: unique_users
+    label: "Unique Users"
+    description: "Unique count of users participating in events"
+    type: simple
+    type_params:
+      measure: user_count
+
