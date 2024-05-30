@@ -8,7 +8,7 @@ with
     )
 
 select
-    c.user_id,
+    cast(c.user_id as int) as user_id,
     max(
         coalesce(cp.raw_properties.google_push_notification_id is not null, false)
     ) as has_token,
