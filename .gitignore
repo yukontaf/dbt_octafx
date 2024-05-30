@@ -4,3 +4,4 @@ logs/
 .DS_Store
 target/compiled/
 target/run/
+manifest.json

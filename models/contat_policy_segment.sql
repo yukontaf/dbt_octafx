@@ -24,6 +24,7 @@ with
             and c.user_id is not null
         group by c.user_id
     )
+    
 
 select
     us.user_id,
