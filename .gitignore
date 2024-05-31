@@ -3,3 +3,4 @@ logs/
 /service_account_key.json
 .DS_Store
 target/
+.*
