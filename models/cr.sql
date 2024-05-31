@@ -15,7 +15,7 @@ with
             campaign_id,
             action_id,
             timestamp as campaign_timestamp
-        from {{ ref("bloomreach_campaign") }}
+        from {{ source("bloomreach", "campaign") }}
         where
             timestamp
             between timestamp('{{ start_date }}') and timestamp('{{ end_date }}')

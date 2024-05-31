@@ -16,7 +16,7 @@ with
             array_agg(distinct os) as os_used,
             array_agg(distinct browser) as browsers_used,
             array_agg(distinct platform) as platforms_used
-        from {{ ref("bloomreach_campaign") }} b
+        from {{ source("bloomreach", "campaign") }} b
         inner join
             {{ ref("users_segment") }} u
             on cast(b.user_id as int) = cast(u.user_id as int)
@@ -39,4 +39,4 @@ select
     array_to_string(ua.browsers_used, ',') as browsers_used,
     array_to_string(ua.platforms_used, ',') as platforms_used
 from user_activity as ua
-limit 100000
+

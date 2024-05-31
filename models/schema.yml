@@ -13,6 +13,7 @@ sources:
         - name: appsflyer_uninstall_events_report
         - name: trading_otr_deals_real
         - name: trading_otr_accounts_real
+        - name: users_cids_all
     - name: bloomreach
       database: analytics-147612
       schema: bloomreach_raw

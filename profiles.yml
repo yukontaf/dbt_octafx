@@ -4,7 +4,7 @@ dbt_octafx:
       dataset: dev_gsokolov
       job_execution_timeout_seconds: 300
       job_retries: 1
-      keyfile: /Users/gsokolov/service_account_key.json
+      keyfile: dbt_octafx/service_account_key.json
       location: EU
       method: service-account
       priority: interactive
@@ -16,7 +16,7 @@ default:
   outputs:
     dev:
       dataset: dev_gsokolov
-      keyfile: service_account_key.json
+      keyfile: dbt_octafx/service_account_key.json
       location: EU
       method: service-account
       priority: interactive

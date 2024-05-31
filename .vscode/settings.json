@@ -122,6 +122,9 @@
 "python.analysis.enableSyncServer": true,
 "python.languageServer": "Jedi",
 "editor.defaultFormatter": "ms-python.black-formatter",
-"editor.defaultFoldingRangeProvider": "Continue.continue"
+"editor.defaultFoldingRangeProvider": "Continue.continue",
+"[jinja-sql]": {
+    "editor.defaultFormatter": "innoverio.vscode-dbt-power-user"
+}
     // "window.titleBarStyle": "native"
 }

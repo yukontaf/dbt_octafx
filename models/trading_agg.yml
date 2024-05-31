@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: trading_dynamics_model
+  - name: trading_agg
     description: "Model for evaluating trading dynamics per user and per segment"
     columns:
       - name: user_id

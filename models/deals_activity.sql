@@ -26,7 +26,7 @@ with
                     else null
                 end
             ) as engagements
-        from {{ ref("bloomreach_campaign") }}
+        from {{ source("bloomreach", "campaign") }}
         where extract(year from timestamp) = extract(year from current_date())
         group by user_id
     )

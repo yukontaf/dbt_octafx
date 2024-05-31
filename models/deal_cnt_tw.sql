@@ -20,3 +20,5 @@ with
 select user_id, deal_count
 from deals_within_two_weeks
 order by deal_count desc
+
+

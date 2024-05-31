@@ -4,4 +4,5 @@ packages:
   - package: dbt-labs/dbt_utils
     version: 1.1.1
   - package: mjirv/dbt_product_analytics
-    version: [">=0.1.0"]
+    version: 0.3.1
+sha1_hash: 65881246a219804854e141b0786df0f25bddfa13
