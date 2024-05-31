@@ -3,6 +3,3 @@ logs/
 /service_account_key.json
 .DS_Store
 target/
-target/compiled/
-target/run/
-manifest.json
