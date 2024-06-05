@@ -1,0 +1,13 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: analytics-147612
+      dataset: dev_gsokolov
+      threads: 4
+      keyfile: service_account_key.json
+      timeout_seconds: 300
+      location: EU
+      priority: interactive
